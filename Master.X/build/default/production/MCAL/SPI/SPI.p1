@@ -1,0 +1,916 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F2596 `(v ~T0 @X0 0 tf ]
+[v F2597 `(v ~T0 @X0 0 tf ]
+"51 MCAL/SPI/SPI.h
+[; ;MCAL/SPI/SPI.h: 51: typedef struct {
+[s S273 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . spi_mode sample_time spi_clk spi_clk_priority ]
+"4922 MCAL/SPI/../../LIB/pic18f4620.h
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4922:     struct {
+[s S185 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . SSPM CKP SSPEN SSPOV WCOL ]
+"4930
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4930:     struct {
+[s S186 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"4920
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4920: typedef union {
+[u S184 `S185 1 `S186 1 ]
+[n S184 . . . ]
+"4937
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4937: extern volatile SSPCON1bits_t SSPCON1bits __attribute__((address(0xFC6)));
+[v _SSPCON1bits `VS184 ~T0 @X0 0 e@4038 ]
+"4 MCAL/SPI/SPI.c
+[; ;MCAL/SPI/SPI.c: 4: static void SPI_ModeConfig(spi_t *Copy_stSPI);
+[v _SPI_ModeConfig `(v ~T0 @X0 0 sf1`*S273 ]
+"5
+[; ;MCAL/SPI/SPI.c: 5: static void SPI_SampleConfig(spi_t *Copy_stSPI);
+[v _SPI_SampleConfig `(v ~T0 @X0 0 sf1`*S273 ]
+"6
+[; ;MCAL/SPI/SPI.c: 6: static void SPI_ClockConfig(spi_t *Copy_stSPI);
+[v _SPI_ClockConfig `(v ~T0 @X0 0 sf1`*S273 ]
+"5228 MCAL/SPI/../../LIB/pic18f4620.h
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5228: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"2669
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2669:     struct {
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2680
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2680:     struct {
+[s S90 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . . TX1IF RC1IF ]
+"2667
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2667: typedef union {
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
+"2686
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2686: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS88 ~T0 @X0 0 e@3998 ]
+"4995
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4995:     struct {
+[s S188 :2 `uc 1 :1 `uc 1 ]
+[n S188 . . R_NOT_W ]
+"5000
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5000:     struct {
+[s S189 :5 `uc 1 :1 `uc 1 ]
+[n S189 . . D_NOT_A ]
+"5005
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5005:     struct {
+[s S190 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S190 . BF UA R_nW S P D_nA CKE SMP ]
+"5016
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5016:     struct {
+[s S191 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . R . D ]
+"5023
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5023:     struct {
+[s S192 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S192 . . W . A ]
+"5030
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5030:     struct {
+[s S193 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S193 . . nW . nA ]
+"5037
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5037:     struct {
+[s S194 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . R_W . D_A ]
+"5044
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5044:     struct {
+[s S195 :2 `uc 1 :1 `uc 1 ]
+[n S195 . . NOT_WRITE ]
+"5049
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5049:     struct {
+[s S196 :5 `uc 1 :1 `uc 1 ]
+[n S196 . . NOT_ADDRESS ]
+"5054
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5054:     struct {
+[s S197 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S197 . . nWRITE . nADDRESS ]
+"5061
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5061:     struct {
+[s S198 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S198 . . RW START STOP DA ]
+"5069
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5069:     struct {
+[s S199 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S199 . . NOT_W . NOT_A ]
+"4993
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4993: typedef union {
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
+[n S187 . . . . . . . . . . . . . ]
+"5076
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5076: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0xFC7)));
+[v _SSPSTATbits `VS187 ~T0 @X0 0 e@4039 ]
+"25 MCAL/SPI/../Interrupt/../GPIO/GPIO_Interface.h
+[v _GPIO_VoidSetPinDirection `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"54 MCAL/SPI/../../LIB/pic18f4620.h
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"200
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 200: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"376
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 376: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"557
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 557: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"704
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 704: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"918
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 918: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"1033
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1033: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"1148
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1148: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"1263
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1263: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"1378
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1378: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"1433
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1433: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"1438
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1438: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"1661
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1661: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"1666
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1666: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"1889
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1889: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"1894
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 1894: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"2117
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2117: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"2122
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2122: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"2345
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2345: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"2350
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2350: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"2515
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2515: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2583
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2583: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"2663
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2663: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"2743
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2743: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"2823
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2823: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"2892
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2892: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"2961
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 2961: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"3030
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3030: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"3099
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3099: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"3106
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3106: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"3113
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3113: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"3120
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3120: __asm("EEADRH equ 0FAAh");
+[; <" EEADRH equ 0FAAh ;# ">
+"3127
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3127: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"3132
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3132: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"3351
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3351: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"3356
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3356: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"3617
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3617: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"3622
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3622: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"3629
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3629: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"3634
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3634: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"3641
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3641: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"3646
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3646: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3653
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3653: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"3660
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3660: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"3778
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3778: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"3785
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3785: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"3792
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3792: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"3799
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3799: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"3893
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3893: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"3976
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 3976: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4061
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4061: __asm("PWM1CON equ 0FB7h");
+[; <" PWM1CON equ 0FB7h ;# ">
+"4134
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4134: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"4139
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4139: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4314
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4314: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"4397
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4397: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"4404
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4404: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"4411
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4411: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"4418
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4418: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"4519
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4519: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"4526
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4526: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"4533
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4533: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"4540
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4540: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"4614
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4614: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"4703
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4703: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"4831
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4831: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"4838
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4838: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"4845
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4845: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"4852
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4852: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4916
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4916: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4989
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 4989: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5223
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5223: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"5230
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5230: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"5237
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5237: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"5311
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5311: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"5316
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5316: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"5433
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5433: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"5440
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5440: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"5548
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5548: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"5555
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5555: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"5562
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5562: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"5569
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5569: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"5710
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5710: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"5741
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5741: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"5746
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 5746: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"6021
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6021: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"6101
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6101: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"6181
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6181: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"6188
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6188: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"6195
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6195: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"6202
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6202: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"6276
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6276: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"6283
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6283: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"6290
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6290: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"6297
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6297: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6304
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6304: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"6311
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6311: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6318
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6318: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6325
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6325: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"6332
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6332: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"6339
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6339: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"6346
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6346: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"6353
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6353: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"6360
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6360: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6367
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6367: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"6374
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6374: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6381
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6381: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6388
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6388: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"6395
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6395: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"6407
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6407: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"6414
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6414: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"6421
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6421: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"6428
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6428: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6435
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6435: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"6442
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6442: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6449
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6449: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6456
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6456: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"6463
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6463: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"6558
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6558: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"6632
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6632: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"6753
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6753: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"6760
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6760: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"6767
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6767: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"6774
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6774: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"6783
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6783: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"6790
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6790: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6797
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6797: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6804
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6804: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6813
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6813: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"6820
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6820: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"6827
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6827: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"6834
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6834: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"6841
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6841: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"6848
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6848: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"6958
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6958: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"6965
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6965: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"6972
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6972: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"6979
+[; ;MCAL/SPI/../../LIB/pic18f4620.h: 6979: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"10 MCAL/SPI/SPI.c
+[; ;MCAL/SPI/SPI.c: 10: void (*SPI_INTERRUPT_HANDELER)(void) = ((void*)0);
+[v _SPI_INTERRUPT_HANDELER `*F2596 ~T0 @X0 1 e ]
+[i _SPI_INTERRUPT_HANDELER
+-> -> -> 0 `i `*v `*F2597
+]
+"13
+[; ;MCAL/SPI/SPI.c: 13: void SPI_voidSPI_Init(spi_t *Copy_stSPI) {
+[v _SPI_voidSPI_Init `(v ~T0 @X0 1 ef1`*S273 ]
+{
+[e :U _SPI_voidSPI_Init ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"14
+[; ;MCAL/SPI/SPI.c: 14:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 275  ]
+{
+"16
+[; ;MCAL/SPI/SPI.c: 16:         (SSPCON1bits.SSPEN = 0);
+[e = . . _SSPCON1bits 0 2 -> -> 0 `i `uc ]
+"18
+[; ;MCAL/SPI/SPI.c: 18:         SPI_ModeConfig(Copy_stSPI);
+[e ( _SPI_ModeConfig (1 _Copy_stSPI ]
+"24
+[; ;MCAL/SPI/SPI.c: 24:         SPI_SampleConfig(Copy_stSPI);
+[e ( _SPI_SampleConfig (1 _Copy_stSPI ]
+"26
+[; ;MCAL/SPI/SPI.c: 26:         SPI_ClockConfig(Copy_stSPI);
+[e ( _SPI_ClockConfig (1 _Copy_stSPI ]
+"28
+[; ;MCAL/SPI/SPI.c: 28:         (SSPCON1bits.SSPEN = 1);
+[e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
+"29
+[; ;MCAL/SPI/SPI.c: 29:     }
+}
+[e :U 275 ]
+"30
+[; ;MCAL/SPI/SPI.c: 30: }
+[e :UE 274 ]
+}
+"32
+[; ;MCAL/SPI/SPI.c: 32: void SPI_voidSPI_Deinit(spi_t *Copy_stSPI) {
+[v _SPI_voidSPI_Deinit `(v ~T0 @X0 1 ef1`*S273 ]
+{
+[e :U _SPI_voidSPI_Deinit ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"33
+[; ;MCAL/SPI/SPI.c: 33:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 277  ]
+{
+"35
+[; ;MCAL/SPI/SPI.c: 35:         (SSPCON1bits.SSPEN = 0);
+[e = . . _SSPCON1bits 0 2 -> -> 0 `i `uc ]
+"36
+[; ;MCAL/SPI/SPI.c: 36:     }
+}
+[e :U 277 ]
+"37
+[; ;MCAL/SPI/SPI.c: 37: }
+[e :UE 276 ]
+}
+"39
+[; ;MCAL/SPI/SPI.c: 39: void SPI_voidWriteData(spi_t *Copy_stSPI, u8 Copy_u8Data) {
+[v _SPI_voidWriteData `(v ~T0 @X0 1 ef2`*S273`uc ]
+{
+[e :U _SPI_voidWriteData ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[v _Copy_u8Data `uc ~T0 @X0 1 r2 ]
+[f ]
+"40
+[; ;MCAL/SPI/SPI.c: 40:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 279  ]
+{
+"41
+[; ;MCAL/SPI/SPI.c: 41:         SSPBUF = Copy_u8Data;
+[e = _SSPBUF _Copy_u8Data ]
+"42
+[; ;MCAL/SPI/SPI.c: 42:         while (!(PIR1bits.SSPIF))
+[e $U 280  ]
+[e :U 281 ]
+"43
+[; ;MCAL/SPI/SPI.c: 43:             ;
+[e :U 280 ]
+"42
+[; ;MCAL/SPI/SPI.c: 42:         while (!(PIR1bits.SSPIF))
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 281  ]
+[e :U 282 ]
+"44
+[; ;MCAL/SPI/SPI.c: 44:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"45
+[; ;MCAL/SPI/SPI.c: 45:     }
+}
+[e :U 279 ]
+"46
+[; ;MCAL/SPI/SPI.c: 46: }
+[e :UE 278 ]
+}
+"48
+[; ;MCAL/SPI/SPI.c: 48: u8 SPI_u8ReadData(spi_t *Copy_stSPI) {
+[v _SPI_u8ReadData `(uc ~T0 @X0 1 ef1`*S273 ]
+{
+[e :U _SPI_u8ReadData ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"49
+[; ;MCAL/SPI/SPI.c: 49:     u8 Local_u8returned = 0;
+[v _Local_u8returned `uc ~T0 @X0 1 a ]
+[e = _Local_u8returned -> -> 0 `i `uc ]
+"50
+[; ;MCAL/SPI/SPI.c: 50:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 284  ]
+{
+"51
+[; ;MCAL/SPI/SPI.c: 51:         while (SSPSTATbits.BF == 0)
+[e $U 285  ]
+[e :U 286 ]
+"52
+[; ;MCAL/SPI/SPI.c: 52:             ;
+[e :U 285 ]
+"51
+[; ;MCAL/SPI/SPI.c: 51:         while (SSPSTATbits.BF == 0)
+[e $ == -> . . _SSPSTATbits 2 0 `i -> 0 `i 286  ]
+[e :U 287 ]
+"53
+[; ;MCAL/SPI/SPI.c: 53:         Local_u8returned = SSPBUF;
+[e = _Local_u8returned _SSPBUF ]
+"54
+[; ;MCAL/SPI/SPI.c: 54:     }
+}
+[e :U 284 ]
+"55
+[; ;MCAL/SPI/SPI.c: 55:     return Local_u8returned;
+[e ) _Local_u8returned ]
+[e $UE 283  ]
+"56
+[; ;MCAL/SPI/SPI.c: 56: }
+[e :UE 283 ]
+}
+"58
+[; ;MCAL/SPI/SPI.c: 58: u8 SPI_u8ReadDataNON_Blocking(spi_t *Copy_stSPI) {
+[v _SPI_u8ReadDataNON_Blocking `(uc ~T0 @X0 1 ef1`*S273 ]
+{
+[e :U _SPI_u8ReadDataNON_Blocking ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"60
+[; ;MCAL/SPI/SPI.c: 60:     u8 Local_u8returned = 0;
+[v _Local_u8returned `uc ~T0 @X0 1 a ]
+[e = _Local_u8returned -> -> 0 `i `uc ]
+"61
+[; ;MCAL/SPI/SPI.c: 61:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 289  ]
+{
+"62
+[; ;MCAL/SPI/SPI.c: 62:         if (SSPSTATbits.BF == 1) {
+[e $ ! == -> . . _SSPSTATbits 2 0 `i -> 1 `i 290  ]
+{
+"64
+[; ;MCAL/SPI/SPI.c: 64:             Local_u8returned = SSPBUF;
+[e = _Local_u8returned _SSPBUF ]
+"65
+[; ;MCAL/SPI/SPI.c: 65:         }
+}
+[e :U 290 ]
+"66
+[; ;MCAL/SPI/SPI.c: 66:     }
+}
+[e :U 289 ]
+"67
+[; ;MCAL/SPI/SPI.c: 67:     return Local_u8returned;
+[e ) _Local_u8returned ]
+[e $UE 288  ]
+"68
+[; ;MCAL/SPI/SPI.c: 68: }
+[e :UE 288 ]
+}
+"71
+[; ;MCAL/SPI/SPI.c: 71: static void SPI_ModeConfig(spi_t *Copy_stSPI) {
+[v _SPI_ModeConfig `(v ~T0 @X0 1 sf1`*S273 ]
+{
+[e :U _SPI_ModeConfig ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"72
+[; ;MCAL/SPI/SPI.c: 72:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 292  ]
+{
+"73
+[; ;MCAL/SPI/SPI.c: 73:         (SSPCON1bits.SSPM = Copy_stSPI->spi_mode);
+[e = . . _SSPCON1bits 0 0 . *U _Copy_stSPI 0 ]
+"74
+[; ;MCAL/SPI/SPI.c: 74:         if ((0 == Copy_stSPI->spi_mode) ||
+[e $ ! || || || == -> 0 `i -> . *U _Copy_stSPI 0 `i == -> 1 `i -> . *U _Copy_stSPI 0 `i == -> 2 `i -> . *U _Copy_stSPI 0 `i == -> 3 `i -> . *U _Copy_stSPI 0 `i 293  ]
+"77
+[; ;MCAL/SPI/SPI.c: 77:                 (3 == Copy_stSPI->spi_mode)) {
+{
+"78
+[; ;MCAL/SPI/SPI.c: 78:             GPIO_VoidSetPinDirection(2, 5, 0);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 5 `i `uc -> -> 0 `i `uc ]
+"79
+[; ;MCAL/SPI/SPI.c: 79:             GPIO_VoidSetPinDirection(2, 4, 1);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> -> 1 `i `uc ]
+"80
+[; ;MCAL/SPI/SPI.c: 80:             GPIO_VoidSetPinDirection(2, 3, 0);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 3 `i `uc -> -> 0 `i `uc ]
+"81
+[; ;MCAL/SPI/SPI.c: 81:         } else if (5 == Copy_stSPI->spi_mode) {
+}
+[e $U 294  ]
+[e :U 293 ]
+[e $ ! == -> 5 `i -> . *U _Copy_stSPI 0 `i 295  ]
+{
+"82
+[; ;MCAL/SPI/SPI.c: 82:             GPIO_VoidSetPinDirection(2, 5, 0);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 5 `i `uc -> -> 0 `i `uc ]
+"83
+[; ;MCAL/SPI/SPI.c: 83:             GPIO_VoidSetPinDirection(2, 4, 1);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> -> 1 `i `uc ]
+"84
+[; ;MCAL/SPI/SPI.c: 84:             GPIO_VoidSetPinDirection(2, 3, 1);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 3 `i `uc -> -> 1 `i `uc ]
+"85
+[; ;MCAL/SPI/SPI.c: 85:         } else if (4 == Copy_stSPI->spi_mode) {
+}
+[e $U 296  ]
+[e :U 295 ]
+[e $ ! == -> 4 `i -> . *U _Copy_stSPI 0 `i 297  ]
+{
+"86
+[; ;MCAL/SPI/SPI.c: 86:             GPIO_VoidSetPinDirection(2, 5, 0);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 5 `i `uc -> -> 0 `i `uc ]
+"87
+[; ;MCAL/SPI/SPI.c: 87:             GPIO_VoidSetPinDirection(2, 4, 1);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 4 `i `uc -> -> 1 `i `uc ]
+"88
+[; ;MCAL/SPI/SPI.c: 88:             GPIO_VoidSetPinDirection(2, 3, 1);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 2 `i `uc -> -> 3 `i `uc -> -> 1 `i `uc ]
+"89
+[; ;MCAL/SPI/SPI.c: 89:             GPIO_VoidSetPinDirection(0, 5, 1);
+[e ( _GPIO_VoidSetPinDirection (3 , , -> -> 0 `i `uc -> -> 5 `i `uc -> -> 1 `i `uc ]
+"90
+[; ;MCAL/SPI/SPI.c: 90:         }
+}
+[e :U 297 ]
+[e :U 296 ]
+[e :U 294 ]
+"91
+[; ;MCAL/SPI/SPI.c: 91:     }
+}
+[e :U 292 ]
+"92
+[; ;MCAL/SPI/SPI.c: 92: }
+[e :UE 291 ]
+}
+"94
+[; ;MCAL/SPI/SPI.c: 94: static void SPI_SampleConfig(spi_t *Copy_stSPI) {
+[v _SPI_SampleConfig `(v ~T0 @X0 1 sf1`*S273 ]
+{
+[e :U _SPI_SampleConfig ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"95
+[; ;MCAL/SPI/SPI.c: 95:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 299  ]
+{
+"96
+[; ;MCAL/SPI/SPI.c: 96:         switch (Copy_stSPI->sample_time) {
+[e $U 301  ]
+{
+"97
+[; ;MCAL/SPI/SPI.c: 97:             case 1:
+[e :U 302 ]
+"98
+[; ;MCAL/SPI/SPI.c: 98:                 (SSPSTATbits.SMP = 1);
+[e = . . _SSPSTATbits 2 7 -> -> 1 `i `uc ]
+"99
+[; ;MCAL/SPI/SPI.c: 99:                 break;
+[e $U 300  ]
+"100
+[; ;MCAL/SPI/SPI.c: 100:             case 0:
+[e :U 303 ]
+"101
+[; ;MCAL/SPI/SPI.c: 101:                 (SSPSTATbits.SMP = 0);
+[e = . . _SSPSTATbits 2 7 -> -> 0 `i `uc ]
+"102
+[; ;MCAL/SPI/SPI.c: 102:                 break;
+[e $U 300  ]
+"103
+[; ;MCAL/SPI/SPI.c: 103:         }
+}
+[e $U 300  ]
+[e :U 301 ]
+[e [\ -> . *U _Copy_stSPI 1 `i , $ -> 1 `i 302
+ , $ -> 0 `i 303
+ 300 ]
+[e :U 300 ]
+"104
+[; ;MCAL/SPI/SPI.c: 104:     }
+}
+[e :U 299 ]
+"105
+[; ;MCAL/SPI/SPI.c: 105: }
+[e :UE 298 ]
+}
+"107
+[; ;MCAL/SPI/SPI.c: 107: static void SPI_ClockConfig(spi_t *Copy_stSPI) {
+[v _SPI_ClockConfig `(v ~T0 @X0 1 sf1`*S273 ]
+{
+[e :U _SPI_ClockConfig ]
+[v _Copy_stSPI `*S273 ~T0 @X0 1 r1 ]
+[f ]
+"108
+[; ;MCAL/SPI/SPI.c: 108:     if (((void*)0) != Copy_stSPI) {
+[e $ ! != -> -> -> 0 `i `*v `*S273 _Copy_stSPI 305  ]
+{
+"109
+[; ;MCAL/SPI/SPI.c: 109:         switch (Copy_stSPI->spi_clk) {
+[e $U 307  ]
+{
+"110
+[; ;MCAL/SPI/SPI.c: 110:             case 0:
+[e :U 308 ]
+"111
+[; ;MCAL/SPI/SPI.c: 111:                 (SSPSTATbits.CKE = 0);
+[e = . . _SSPSTATbits 2 6 -> -> 0 `i `uc ]
+"112
+[; ;MCAL/SPI/SPI.c: 112:                 break;
+[e $U 306  ]
+"113
+[; ;MCAL/SPI/SPI.c: 113:             case 1:
+[e :U 309 ]
+"114
+[; ;MCAL/SPI/SPI.c: 114:                 (SSPSTATbits.CKE = 1);
+[e = . . _SSPSTATbits 2 6 -> -> 1 `i `uc ]
+"115
+[; ;MCAL/SPI/SPI.c: 115:                 break;
+[e $U 306  ]
+"116
+[; ;MCAL/SPI/SPI.c: 116:             default:
+[e :U 310 ]
+"117
+[; ;MCAL/SPI/SPI.c: 117:                 break;
+[e $U 306  ]
+"118
+[; ;MCAL/SPI/SPI.c: 118:         }
+}
+[e $U 306  ]
+[e :U 307 ]
+[e [\ -> . *U _Copy_stSPI 2 `i , $ -> 0 `i 308
+ , $ -> 1 `i 309
+ 310 ]
+[e :U 306 ]
+"119
+[; ;MCAL/SPI/SPI.c: 119:         switch (Copy_stSPI->spi_clk_priority) {
+[e $U 312  ]
+{
+"120
+[; ;MCAL/SPI/SPI.c: 120:             case 1:
+[e :U 313 ]
+"121
+[; ;MCAL/SPI/SPI.c: 121:                 (SSPCON1bits.CKP = 1);
+[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
+"122
+[; ;MCAL/SPI/SPI.c: 122:                 break;
+[e $U 311  ]
+"123
+[; ;MCAL/SPI/SPI.c: 123:             case 0:
+[e :U 314 ]
+"124
+[; ;MCAL/SPI/SPI.c: 124:                 (SSPCON1bits.CKP = 0);
+[e = . . _SSPCON1bits 0 1 -> -> 0 `i `uc ]
+"125
+[; ;MCAL/SPI/SPI.c: 125:                 break;
+[e $U 311  ]
+"127
+[; ;MCAL/SPI/SPI.c: 127:             default:
+[e :U 315 ]
+"128
+[; ;MCAL/SPI/SPI.c: 128:                 break;
+[e $U 311  ]
+"129
+[; ;MCAL/SPI/SPI.c: 129:         }
+}
+[e $U 311  ]
+[e :U 312 ]
+[e [\ -> . *U _Copy_stSPI 3 `i , $ -> 1 `i 313
+ , $ -> 0 `i 314
+ 315 ]
+[e :U 311 ]
+"130
+[; ;MCAL/SPI/SPI.c: 130:     }
+}
+[e :U 305 ]
+"131
+[; ;MCAL/SPI/SPI.c: 131: }
+[e :UE 304 ]
+}

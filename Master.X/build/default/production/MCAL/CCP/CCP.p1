@@ -1,0 +1,1333 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F2615 `(v ~T0 @X0 0 tf ]
+[v F2616 `(v ~T0 @X0 0 tf ]
+[v F2618 `(v ~T0 @X0 0 tf ]
+[v F2619 `(v ~T0 @X0 0 tf ]
+"14 MCAL/CCP/CCP.c
+[; ;MCAL/CCP/CCP.c: 14: void CCP_voidInit(CCP_t *Copy_stCCP) {
+[c E2579 0 1 2 .. ]
+[n E2579 . Capture_Mode Compare_Mode PWM_Mode  ]
+"98 MCAL/CCP/CCP.h
+[; ;MCAL/CCP/CCP.h: 98: typedef struct {
+[s S276 `E2579 1 `uc 1 :1 `uc 1 :2 `uc 1 `ui 1 `uc 1 `uc 1 ]
+[n S276 . mode CPP_Variant ccp_select timer3_timer1_ccp PWM_FREQ Postscaler Prescaler ]
+"4424 MCAL/CCP/../../LIB/pic18f4620.h
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4424:     struct {
+[s S163 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S163 . CCP1M DC1B P1M ]
+"4430
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4430:     struct {
+[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S164 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 CCP1Y CCP1X P1M0 P1M1 ]
+"4441
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4441:     struct {
+[s S165 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S165 . . DC1B0 DC1B1 ]
+"4422
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4422: typedef union {
+[u S162 `S163 1 `S164 1 `S165 1 ]
+[n S162 . . . . ]
+"4447
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4447: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0xFBD)));
+[v _CCP1CONbits `VS162 ~T0 @X0 0 e@4029 ]
+"4320
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4320:     struct {
+[s S159 :4 `uc 1 :2 `uc 1 ]
+[n S159 . CCP2M DC2B ]
+"4325
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4325:     struct {
+[s S160 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S160 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 CCP2Y CCP2X ]
+"4334
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4334:     struct {
+[s S161 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S161 . . DC2B0 DC2B1 ]
+"4318
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4318: typedef union {
+[u S158 `S159 1 `S160 1 `S161 1 ]
+[n S158 . . . . ]
+"4340
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4340: extern volatile CCP2CONbits_t CCP2CONbits __attribute__((address(0xFBA)));
+[v _CCP2CONbits `VS158 ~T0 @X0 0 e@4026 ]
+"4 MCAL/CCP/CCP.c
+[; ;MCAL/CCP/CCP.c: 4: static void CCP_Modeconfig(CCP_t *Copy_stCCP);
+[v _CCP_Modeconfig `(v ~T0 @X0 0 sf1`*S276 ]
+"8
+[; ;MCAL/CCP/CCP.c: 8: static void CCP_Interruptconfig(CCP_t *Copy_stCCP);
+[v _CCP_Interruptconfig `(v ~T0 @X0 0 sf1`*S276 ]
+"2589 MCAL/CCP/../../LIB/pic18f4620.h
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2589:     struct {
+[s S86 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S86 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2600
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2600:     struct {
+[s S87 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S87 . . TX1IE RC1IE ]
+"2587
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2587: typedef union {
+[u S85 `S86 1 `S87 1 ]
+[n S85 . . . ]
+"2606
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2606: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS85 ~T0 @X0 0 e@3997 ]
+"2829
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2829:     struct {
+[s S95 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S95 . CCP2IE TMR3IE HLVDIE BCLIE EEIE . CMIE OSCFIE ]
+"2840
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2840:     struct {
+[s S96 :2 `uc 1 :1 `uc 1 ]
+[n S96 . . LVDIE ]
+"2827
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2827: typedef union {
+[u S94 `S95 1 `S96 1 ]
+[n S94 . . . ]
+"2845
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2845: extern volatile PIE2bits_t PIE2bits __attribute__((address(0xFA0)));
+[v _PIE2bits `VS94 ~T0 @X0 0 e@4000 ]
+"81 MCAL/CCP/CCP.h
+[; ;MCAL/CCP/CCP.h: 81:     struct {
+[s S274 `uc 1 `uc 1 ]
+[n S274 . CCPR_LOW CCPR_HIGH ]
+"86
+[; ;MCAL/CCP/CCP.h: 86:     struct {
+[s S275 `us 1 ]
+[n S275 . CCPR_16_BIT ]
+"79
+[; ;MCAL/CCP/CCP.h: 79: typedef union {
+[u S273 `S274 1 `S275 1 ]
+[n S273 . . . ]
+"5309 MCAL/CCP/../../LIB/pic18f4620.h
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5309: extern volatile unsigned char PR2 __attribute__((address(0xFCB)));
+[v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
+"4524
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4524: extern volatile unsigned char CCPR1L __attribute__((address(0xFBE)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
+"4402
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4402: extern volatile unsigned char CCPR2L __attribute__((address(0xFBB)));
+[v _CCPR2L `Vuc ~T0 @X0 0 e@4027 ]
+"5 MCAL/CCP/CCP.c
+[; ;MCAL/CCP/CCP.c: 5: static void CCP_CaptureModeConfig(CCP_t *Copy_stCCP);
+[v _CCP_CaptureModeConfig `(v ~T0 @X0 0 sf1`*S276 ]
+"7
+[; ;MCAL/CCP/CCP.c: 7: static void CCP_PWM_ModeConfig(CCP_t *Copy_stCCP);
+[v _CCP_PWM_ModeConfig `(v ~T0 @X0 0 sf1`*S276 ]
+"25 MCAL/CCP/../Interrupt/../GPIO/GPIO_Interface.h
+[v _GPIO_VoidSetPinDirection `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"374 MCAL/CCP/../../LIB/pic18f4620.h
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 374: extern volatile unsigned char PORTC __attribute__((address(0xF82)));
+[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
+"2669
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2669:     struct {
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2680
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2680:     struct {
+[s S90 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . . TX1IF RC1IF ]
+"2667
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2667: typedef union {
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
+"2686
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2686: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS88 ~T0 @X0 0 e@3998 ]
+[v F2654 `(v ~T0 @X0 0 tf ]
+"2898
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2898:     struct {
+[s S98 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S98 . CCP2IF TMR3IF HLVDIF BCLIF EEIF . CMIF OSCFIF ]
+"2909
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2909:     struct {
+[s S99 :2 `uc 1 :1 `uc 1 ]
+[n S99 . . LVDIF ]
+"2896
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2896: typedef union {
+[u S97 `S98 1 `S99 1 ]
+[n S97 . . . ]
+"2914
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2914: extern volatile PIR2bits_t PIR2bits __attribute__((address(0xFA1)));
+[v _PIR2bits `VS97 ~T0 @X0 0 e@4001 ]
+[v F2656 `(v ~T0 @X0 0 tf ]
+"54 MCAL/CCP/../../LIB/pic18f4620.h
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"200
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 200: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"376
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 376: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"557
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 557: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"704
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 704: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"918
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 918: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"1033
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1033: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"1148
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1148: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"1263
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1263: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"1378
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1378: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"1433
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1433: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"1438
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1438: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"1661
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1661: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"1666
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1666: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"1889
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1889: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"1894
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 1894: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"2117
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2117: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"2122
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2122: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"2345
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2345: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"2350
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2350: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"2515
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2515: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2583
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2583: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"2663
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2663: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"2743
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2743: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"2823
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2823: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"2892
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2892: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"2961
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 2961: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"3030
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3030: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"3099
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3099: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"3106
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3106: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"3113
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3113: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"3120
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3120: __asm("EEADRH equ 0FAAh");
+[; <" EEADRH equ 0FAAh ;# ">
+"3127
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3127: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"3132
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3132: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"3351
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3351: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"3356
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3356: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"3617
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3617: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"3622
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3622: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"3629
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3629: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"3634
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3634: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"3641
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3641: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"3646
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3646: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3653
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3653: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"3660
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3660: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"3778
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3778: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"3785
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3785: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"3792
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3792: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"3799
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3799: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"3893
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3893: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"3976
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 3976: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4061
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4061: __asm("PWM1CON equ 0FB7h");
+[; <" PWM1CON equ 0FB7h ;# ">
+"4134
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4134: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"4139
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4139: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4314
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4314: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"4397
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4397: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"4404
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4404: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"4411
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4411: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"4418
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4418: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"4519
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4519: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"4526
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4526: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"4533
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4533: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"4540
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4540: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"4614
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4614: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"4703
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4703: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"4831
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4831: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"4838
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4838: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"4845
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4845: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"4852
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4852: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4916
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4916: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4989
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 4989: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5223
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5223: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"5230
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5230: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"5237
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5237: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"5311
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5311: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"5316
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5316: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"5433
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5433: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"5440
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5440: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"5548
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5548: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"5555
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5555: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"5562
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5562: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"5569
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5569: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"5710
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5710: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"5741
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5741: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"5746
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 5746: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"6021
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6021: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"6101
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6101: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"6181
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6181: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"6188
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6188: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"6195
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6195: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"6202
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6202: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"6276
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6276: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"6283
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6283: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"6290
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6290: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"6297
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6297: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6304
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6304: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"6311
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6311: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6318
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6318: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6325
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6325: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"6332
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6332: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"6339
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6339: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"6346
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6346: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"6353
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6353: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"6360
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6360: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6367
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6367: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"6374
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6374: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6381
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6381: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6388
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6388: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"6395
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6395: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"6407
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6407: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"6414
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6414: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"6421
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6421: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"6428
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6428: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6435
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6435: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"6442
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6442: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6449
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6449: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6456
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6456: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"6463
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6463: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"6558
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6558: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"6632
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6632: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"6753
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6753: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"6760
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6760: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"6767
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6767: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"6774
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6774: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"6783
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6783: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"6790
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6790: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6797
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6797: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6804
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6804: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6813
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6813: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"6820
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6820: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"6827
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6827: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"6834
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6834: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"6841
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6841: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"6848
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6848: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"6958
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6958: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"6965
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6965: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"6972
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6972: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"6979
+[; ;MCAL/CCP/../../LIB/pic18f4620.h: 6979: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"10 MCAL/CCP/CCP.c
+[; ;MCAL/CCP/CCP.c: 10: void (*CCP1_InterruptHandeler)(void) = ((void*)0);
+[v _CCP1_InterruptHandeler `*F2615 ~T0 @X0 1 e ]
+[i _CCP1_InterruptHandeler
+-> -> -> 0 `i `*v `*F2616
+]
+"11
+[; ;MCAL/CCP/CCP.c: 11: void (*CCP2_InterruptHandeler)(void) = ((void*)0);
+[v _CCP2_InterruptHandeler `*F2618 ~T0 @X0 1 e ]
+[i _CCP2_InterruptHandeler
+-> -> -> 0 `i `*v `*F2619
+]
+"14
+[; ;MCAL/CCP/CCP.c: 14: void CCP_voidInit(CCP_t *Copy_stCCP) {
+[v _CCP_voidInit `(v ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_voidInit ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"15
+[; ;MCAL/CCP/CCP.c: 15:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 278  ]
+{
+"17
+[; ;MCAL/CCP/CCP.c: 17:         (CCP1CONbits.CCP1M = 0);
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"18
+[; ;MCAL/CCP/CCP.c: 18:         (CCP2CONbits.CCP2M = 0);
+[e = . . _CCP2CONbits 0 0 -> -> 0 `i `uc ]
+"20
+[; ;MCAL/CCP/CCP.c: 20:         CCP_Modeconfig(Copy_stCCP);
+[e ( _CCP_Modeconfig (1 _Copy_stCCP ]
+"22
+[; ;MCAL/CCP/CCP.c: 22:         CCP_Interruptconfig(Copy_stCCP);
+[e ( _CCP_Interruptconfig (1 _Copy_stCCP ]
+"23
+[; ;MCAL/CCP/CCP.c: 23:     }
+}
+[e :U 278 ]
+"24
+[; ;MCAL/CCP/CCP.c: 24: }
+[e :UE 277 ]
+}
+"26
+[; ;MCAL/CCP/CCP.c: 26: void CCP_voidDeinit(CCP_t *Copy_stCCP) {
+[v _CCP_voidDeinit `(v ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_voidDeinit ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"27
+[; ;MCAL/CCP/CCP.c: 27:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 280  ]
+{
+"28
+[; ;MCAL/CCP/CCP.c: 28:         switch (Copy_stCCP->ccp_select) {
+[e $U 282  ]
+{
+"29
+[; ;MCAL/CCP/CCP.c: 29:             case 0:
+[e :U 283 ]
+"30
+[; ;MCAL/CCP/CCP.c: 30:                 (CCP1CONbits.CCP1M = 0);
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"31
+[; ;MCAL/CCP/CCP.c: 31:                 (PIE1bits.CCP1IE = 0);
+[e = . . _PIE1bits 0 2 -> -> 0 `i `uc ]
+"32
+[; ;MCAL/CCP/CCP.c: 32:                 break;
+[e $U 281  ]
+"33
+[; ;MCAL/CCP/CCP.c: 33:             case 1:
+[e :U 284 ]
+"34
+[; ;MCAL/CCP/CCP.c: 34:                 (CCP2CONbits.CCP2M = 0);
+[e = . . _CCP2CONbits 0 0 -> -> 0 `i `uc ]
+"35
+[; ;MCAL/CCP/CCP.c: 35:                 (PIE2bits.CCP2IE = 0);
+[e = . . _PIE2bits 0 0 -> -> 0 `i `uc ]
+"36
+[; ;MCAL/CCP/CCP.c: 36:                 break;
+[e $U 281  ]
+"37
+[; ;MCAL/CCP/CCP.c: 37:         }
+}
+[e $U 281  ]
+[e :U 282 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 283
+ , $ -> 1 `i 284
+ 281 ]
+[e :U 281 ]
+"38
+[; ;MCAL/CCP/CCP.c: 38:     }
+}
+[e :U 280 ]
+"39
+[; ;MCAL/CCP/CCP.c: 39: }
+[e :UE 279 ]
+}
+"41
+[; ;MCAL/CCP/CCP.c: 41: u8 CCP_u8IsCapturedDataReady(CCP_t *Copy_stCCP) {
+[v _CCP_u8IsCapturedDataReady `(uc ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_u8IsCapturedDataReady ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"42
+[; ;MCAL/CCP/CCP.c: 42:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 286  ]
+{
+"43
+[; ;MCAL/CCP/CCP.c: 43:         switch (Copy_stCCP->ccp_select) {
+[e $U 288  ]
+{
+"44
+[; ;MCAL/CCP/CCP.c: 44:             case 0:
+[e :U 289 ]
+"53
+[; ;MCAL/CCP/CCP.c: 53:                 break;
+[e $U 287  ]
+"55
+[; ;MCAL/CCP/CCP.c: 55:             case 1:
+[e :U 290 ]
+"64
+[; ;MCAL/CCP/CCP.c: 64:                 break;
+[e $U 287  ]
+"65
+[; ;MCAL/CCP/CCP.c: 65:         }
+}
+[e $U 287  ]
+[e :U 288 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 289
+ , $ -> 1 `i 290
+ 287 ]
+[e :U 287 ]
+"66
+[; ;MCAL/CCP/CCP.c: 66:     }
+}
+[e :U 286 ]
+"67
+[; ;MCAL/CCP/CCP.c: 67: }
+[e :UE 285 ]
+}
+"69
+[; ;MCAL/CCP/CCP.c: 69: u16 CCP_u16CaptureReadValue(CCP_t *Copy_stCCP) {
+[v _CCP_u16CaptureReadValue `(us ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_u16CaptureReadValue ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"70
+[; ;MCAL/CCP/CCP.c: 70:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 292  ]
+{
+[v F2628 `S273 ~T0 @X0 1 s ]
+[i F2628
+:U 0
+:U ..
+:U ..
+:U ..
+"71
+[; ;MCAL/CCP/CCP.c: 71:         CCP_REG_t CCP_Reg_temp = {.CCPR_HIGH = 0, .CCPR_LOW = 0};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v _CCP_Reg_temp `S273 ~T0 @X0 1 a ]
+[e = _CCP_Reg_temp F2628 ]
+"73
+[; ;MCAL/CCP/CCP.c: 73:         switch (Copy_stCCP->ccp_select) {
+[e $U 294  ]
+{
+"74
+[; ;MCAL/CCP/CCP.c: 74:             case 0:
+[e :U 295 ]
+"80
+[; ;MCAL/CCP/CCP.c: 80:                 break;
+[e $U 293  ]
+"82
+[; ;MCAL/CCP/CCP.c: 82:             case 1:
+[e :U 296 ]
+"88
+[; ;MCAL/CCP/CCP.c: 88:                 break;
+[e $U 293  ]
+"89
+[; ;MCAL/CCP/CCP.c: 89:         }
+}
+[e $U 293  ]
+[e :U 294 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 295
+ , $ -> 1 `i 296
+ 293 ]
+[e :U 293 ]
+"90
+[; ;MCAL/CCP/CCP.c: 90:     }
+}
+[e :U 292 ]
+"91
+[; ;MCAL/CCP/CCP.c: 91: }
+[e :UE 291 ]
+}
+"93
+[; ;MCAL/CCP/CCP.c: 93: u8 CCP_u8IsComparedDataReady(CCP_t *Copy_stCCP) {
+[v _CCP_u8IsComparedDataReady `(uc ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_u8IsComparedDataReady ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"94
+[; ;MCAL/CCP/CCP.c: 94:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 298  ]
+{
+"95
+[; ;MCAL/CCP/CCP.c: 95:         switch (Copy_stCCP->ccp_select) {
+[e $U 300  ]
+{
+"96
+[; ;MCAL/CCP/CCP.c: 96:             case 0:
+[e :U 301 ]
+"105
+[; ;MCAL/CCP/CCP.c: 105:                 break;
+[e $U 299  ]
+"107
+[; ;MCAL/CCP/CCP.c: 107:             case 1:
+[e :U 302 ]
+"116
+[; ;MCAL/CCP/CCP.c: 116:                 break;
+[e $U 299  ]
+"117
+[; ;MCAL/CCP/CCP.c: 117:         }
+}
+[e $U 299  ]
+[e :U 300 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 301
+ , $ -> 1 `i 302
+ 299 ]
+[e :U 299 ]
+"118
+[; ;MCAL/CCP/CCP.c: 118:     }
+}
+[e :U 298 ]
+"119
+[; ;MCAL/CCP/CCP.c: 119: }
+[e :UE 297 ]
+}
+"121
+[; ;MCAL/CCP/CCP.c: 121: void CCP_voidCompareSetValue(CCP_t *Copy_stCCP, u16 Copy_u16Value) {
+[v _CCP_voidCompareSetValue `(v ~T0 @X0 1 ef2`*S276`us ]
+{
+[e :U _CCP_voidCompareSetValue ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[v _Copy_u16Value `us ~T0 @X0 1 r2 ]
+[f ]
+"122
+[; ;MCAL/CCP/CCP.c: 122:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 304  ]
+{
+[v F2635 `S273 ~T0 @X0 1 s ]
+[i F2635
+:U 0
+:U ..
+:U ..
+:U ..
+"124
+[; ;MCAL/CCP/CCP.c: 124:         CCP_REG_t CCP_Reg_temp = {.CCPR_LOW = 0, .CCPR_HIGH = 0};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v _CCP_Reg_temp `S273 ~T0 @X0 1 a ]
+[e = _CCP_Reg_temp F2635 ]
+"125
+[; ;MCAL/CCP/CCP.c: 125:         CCP_Reg_temp.CCPR_16_BIT = Copy_u16Value;
+[e = . . _CCP_Reg_temp 1 0 _Copy_u16Value ]
+"126
+[; ;MCAL/CCP/CCP.c: 126:         switch (Copy_stCCP->ccp_select) {
+[e $U 306  ]
+{
+"127
+[; ;MCAL/CCP/CCP.c: 127:             case 0:
+[e :U 307 ]
+"133
+[; ;MCAL/CCP/CCP.c: 133:                 break;
+[e $U 305  ]
+"135
+[; ;MCAL/CCP/CCP.c: 135:             case 1:
+[e :U 308 ]
+"142
+[; ;MCAL/CCP/CCP.c: 142:                 break;
+[e $U 305  ]
+"143
+[; ;MCAL/CCP/CCP.c: 143:         }
+}
+[e $U 305  ]
+[e :U 306 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 307
+ , $ -> 1 `i 308
+ 305 ]
+[e :U 305 ]
+"144
+[; ;MCAL/CCP/CCP.c: 144:     }
+}
+[e :U 304 ]
+"145
+[; ;MCAL/CCP/CCP.c: 145: }
+[e :UE 303 ]
+}
+"147
+[; ;MCAL/CCP/CCP.c: 147: void CCP_voidSetDuty(CCP_t *Copy_stCCP, const u16 Copy_u16Duty) {
+[v _CCP_voidSetDuty `(v ~T0 @X0 1 ef2`*S276`Cus ]
+{
+[e :U _CCP_voidSetDuty ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[v _Copy_u16Duty `Cus ~T0 @X0 1 r2 ]
+[f ]
+"148
+[; ;MCAL/CCP/CCP.c: 148:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 310  ]
+{
+"149
+[; ;MCAL/CCP/CCP.c: 149:         u16 Local_u16DuityTemp = 0;
+[v _Local_u16DuityTemp `us ~T0 @X0 1 a ]
+[e = _Local_u16DuityTemp -> -> 0 `i `us ]
+"150
+[; ;MCAL/CCP/CCP.c: 150:         switch (Copy_stCCP->ccp_select) {
+[e $U 312  ]
+{
+"152
+[; ;MCAL/CCP/CCP.c: 152:             case 0:
+[e :U 313 ]
+"154
+[; ;MCAL/CCP/CCP.c: 154:                 Local_u16DuityTemp = (u16) ((PR2 + 1) * (Copy_u16Duty / 100.0) * 4);
+[e = _Local_u16DuityTemp -> * * -> + -> _PR2 `i -> 1 `i `d / -> -> _Copy_u16Duty `ui `d .100.0 -> -> 4 `i `d `us ]
+"155
+[; ;MCAL/CCP/CCP.c: 155:                 CCP1CONbits.DC1B = Local_u16DuityTemp & 3;
+[e = . . _CCP1CONbits 0 1 -> & -> _Local_u16DuityTemp `ui -> -> 3 `i `ui `uc ]
+"156
+[; ;MCAL/CCP/CCP.c: 156:                 CCPR1L = (u8) (Local_u16DuityTemp >> 2);
+[e = _CCPR1L -> >> -> _Local_u16DuityTemp `ui -> 2 `i `uc ]
+"158
+[; ;MCAL/CCP/CCP.c: 158:                 break;
+[e $U 311  ]
+"160
+[; ;MCAL/CCP/CCP.c: 160:             case 1:
+[e :U 314 ]
+"163
+[; ;MCAL/CCP/CCP.c: 163:                 Local_u16DuityTemp = (u16) ((PR2 + 1) * (Copy_u16Duty / 100.0) * 4);
+[e = _Local_u16DuityTemp -> * * -> + -> _PR2 `i -> 1 `i `d / -> -> _Copy_u16Duty `ui `d .100.0 -> -> 4 `i `d `us ]
+"164
+[; ;MCAL/CCP/CCP.c: 164:                 CCP2CONbits.DC2B = Local_u16DuityTemp & 3;
+[e = . . _CCP2CONbits 0 1 -> & -> _Local_u16DuityTemp `ui -> -> 3 `i `ui `uc ]
+"165
+[; ;MCAL/CCP/CCP.c: 165:                 CCPR2L = (u8) (Local_u16DuityTemp >> 2);
+[e = _CCPR2L -> >> -> _Local_u16DuityTemp `ui -> 2 `i `uc ]
+"167
+[; ;MCAL/CCP/CCP.c: 167:                 break;
+[e $U 311  ]
+"168
+[; ;MCAL/CCP/CCP.c: 168:         }
+}
+[e $U 311  ]
+[e :U 312 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 313
+ , $ -> 1 `i 314
+ 311 ]
+[e :U 311 ]
+"169
+[; ;MCAL/CCP/CCP.c: 169:     }
+}
+[e :U 310 ]
+"170
+[; ;MCAL/CCP/CCP.c: 170: }
+[e :UE 309 ]
+}
+"172
+[; ;MCAL/CCP/CCP.c: 172: void CCP_voidPWM_Start(CCP_t *Copy_stCCP) {
+[v _CCP_voidPWM_Start `(v ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_voidPWM_Start ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"173
+[; ;MCAL/CCP/CCP.c: 173:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 316  ]
+{
+"175
+[; ;MCAL/CCP/CCP.c: 175:         switch (Copy_stCCP->ccp_select) {
+[e $U 318  ]
+{
+"176
+[; ;MCAL/CCP/CCP.c: 176:             case 0:
+[e :U 319 ]
+"179
+[; ;MCAL/CCP/CCP.c: 179:                 (CCP1CONbits.CCP1M = 12);
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+"181
+[; ;MCAL/CCP/CCP.c: 181:                 break;
+[e $U 317  ]
+"183
+[; ;MCAL/CCP/CCP.c: 183:             case 1:
+[e :U 320 ]
+"186
+[; ;MCAL/CCP/CCP.c: 186:                 (CCP2CONbits.CCP2M = 12);
+[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
+"188
+[; ;MCAL/CCP/CCP.c: 188:                 break;
+[e $U 317  ]
+"189
+[; ;MCAL/CCP/CCP.c: 189:         }
+}
+[e $U 317  ]
+[e :U 318 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 319
+ , $ -> 1 `i 320
+ 317 ]
+[e :U 317 ]
+"190
+[; ;MCAL/CCP/CCP.c: 190:     }
+}
+[e :U 316 ]
+"191
+[; ;MCAL/CCP/CCP.c: 191: }
+[e :UE 315 ]
+}
+"193
+[; ;MCAL/CCP/CCP.c: 193: void CCP_voidPWM_Stop(CCP_t *Copy_stCCP) {
+[v _CCP_voidPWM_Stop `(v ~T0 @X0 1 ef1`*S276 ]
+{
+[e :U _CCP_voidPWM_Stop ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"194
+[; ;MCAL/CCP/CCP.c: 194:     switch (Copy_stCCP->ccp_select) {
+[e $U 323  ]
+{
+"195
+[; ;MCAL/CCP/CCP.c: 195:         case 0:
+[e :U 324 ]
+"198
+[; ;MCAL/CCP/CCP.c: 198:             (CCP1CONbits.CCP1M = 0);
+[e = . . _CCP1CONbits 0 0 -> -> 0 `i `uc ]
+"200
+[; ;MCAL/CCP/CCP.c: 200:             break;
+[e $U 322  ]
+"202
+[; ;MCAL/CCP/CCP.c: 202:         case 1:
+[e :U 325 ]
+"205
+[; ;MCAL/CCP/CCP.c: 205:             (CCP2CONbits.CCP2M = 0);
+[e = . . _CCP2CONbits 0 0 -> -> 0 `i `uc ]
+"207
+[; ;MCAL/CCP/CCP.c: 207:             break;
+[e $U 322  ]
+"208
+[; ;MCAL/CCP/CCP.c: 208:     }
+}
+[e $U 322  ]
+[e :U 323 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 324
+ , $ -> 1 `i 325
+ 322 ]
+[e :U 322 ]
+"209
+[; ;MCAL/CCP/CCP.c: 209: }
+[e :UE 321 ]
+}
+"211
+[; ;MCAL/CCP/CCP.c: 211: static void CCP_Modeconfig(CCP_t *Copy_stCCP) {
+[v _CCP_Modeconfig `(v ~T0 @X0 1 sf1`*S276 ]
+{
+[e :U _CCP_Modeconfig ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"212
+[; ;MCAL/CCP/CCP.c: 212:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 327  ]
+{
+"213
+[; ;MCAL/CCP/CCP.c: 213:         switch (Copy_stCCP->ccp_select) {
+[e $U 329  ]
+{
+"214
+[; ;MCAL/CCP/CCP.c: 214:             case 0:
+[e :U 330 ]
+"215
+[; ;MCAL/CCP/CCP.c: 215:                 switch (Copy_stCCP->mode) {
+[e $U 332  ]
+{
+"216
+[; ;MCAL/CCP/CCP.c: 216:                     case Capture_Mode:
+[e :U 333 ]
+"217
+[; ;MCAL/CCP/CCP.c: 217:                         CCP_CaptureModeConfig(Copy_stCCP);
+[e ( _CCP_CaptureModeConfig (1 _Copy_stCCP ]
+"218
+[; ;MCAL/CCP/CCP.c: 218:                         break;
+[e $U 331  ]
+"220
+[; ;MCAL/CCP/CCP.c: 220:                     case Compare_Mode:
+[e :U 334 ]
+"225
+[; ;MCAL/CCP/CCP.c: 225:                         break;
+[e $U 331  ]
+"227
+[; ;MCAL/CCP/CCP.c: 227:                     case PWM_Mode:
+[e :U 335 ]
+"228
+[; ;MCAL/CCP/CCP.c: 228:                         CCP_PWM_ModeConfig(Copy_stCCP);
+[e ( _CCP_PWM_ModeConfig (1 _Copy_stCCP ]
+"229
+[; ;MCAL/CCP/CCP.c: 229:                         break;
+[e $U 331  ]
+"230
+[; ;MCAL/CCP/CCP.c: 230:                 }
+}
+[e $U 331  ]
+[e :U 332 ]
+[e [\ -> . *U _Copy_stCCP 0 `ui , $ -> . `E2579 0 `ui 333
+ , $ -> . `E2579 1 `ui 334
+ , $ -> . `E2579 2 `ui 335
+ 331 ]
+[e :U 331 ]
+"232
+[; ;MCAL/CCP/CCP.c: 232:                 break;
+[e $U 328  ]
+"233
+[; ;MCAL/CCP/CCP.c: 233:             case 1:
+[e :U 336 ]
+"234
+[; ;MCAL/CCP/CCP.c: 234:                 switch (Copy_stCCP->mode) {
+[e $U 338  ]
+{
+"235
+[; ;MCAL/CCP/CCP.c: 235:                     case Capture_Mode:
+[e :U 339 ]
+"236
+[; ;MCAL/CCP/CCP.c: 236:                         CCP_CaptureModeConfig(Copy_stCCP);
+[e ( _CCP_CaptureModeConfig (1 _Copy_stCCP ]
+"237
+[; ;MCAL/CCP/CCP.c: 237:                         break;
+[e $U 337  ]
+"239
+[; ;MCAL/CCP/CCP.c: 239:                     case Compare_Mode:
+[e :U 340 ]
+"244
+[; ;MCAL/CCP/CCP.c: 244:                         break;
+[e $U 337  ]
+"246
+[; ;MCAL/CCP/CCP.c: 246:                     case PWM_Mode:
+[e :U 341 ]
+"247
+[; ;MCAL/CCP/CCP.c: 247:                         CCP_PWM_ModeConfig(Copy_stCCP);
+[e ( _CCP_PWM_ModeConfig (1 _Copy_stCCP ]
+"248
+[; ;MCAL/CCP/CCP.c: 248:                         break;
+[e $U 337  ]
+"249
+[; ;MCAL/CCP/CCP.c: 249:                 }
+}
+[e $U 337  ]
+[e :U 338 ]
+[e [\ -> . *U _Copy_stCCP 0 `ui , $ -> . `E2579 0 `ui 339
+ , $ -> . `E2579 1 `ui 340
+ , $ -> . `E2579 2 `ui 341
+ 337 ]
+[e :U 337 ]
+"251
+[; ;MCAL/CCP/CCP.c: 251:                 break;
+[e $U 328  ]
+"252
+[; ;MCAL/CCP/CCP.c: 252:         }
+}
+[e $U 328  ]
+[e :U 329 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 330
+ , $ -> 1 `i 336
+ 328 ]
+[e :U 328 ]
+"253
+[; ;MCAL/CCP/CCP.c: 253:     }
+}
+[e :U 327 ]
+"254
+[; ;MCAL/CCP/CCP.c: 254: }
+[e :UE 326 ]
+}
+"256
+[; ;MCAL/CCP/CCP.c: 256: static void CCP_Interruptconfig(CCP_t *Copy_stCCP) {
+[v _CCP_Interruptconfig `(v ~T0 @X0 1 sf1`*S276 ]
+{
+[e :U _CCP_Interruptconfig ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"257
+[; ;MCAL/CCP/CCP.c: 257:     if (((void*)0) != Copy_stCCP) {
+[e $ ! != -> -> -> 0 `i `*v `*S276 _Copy_stCCP 343  ]
+{
+"258
+[; ;MCAL/CCP/CCP.c: 258:         switch (Copy_stCCP->ccp_select) {
+[e $U 345  ]
+{
+"259
+[; ;MCAL/CCP/CCP.c: 259:             case 0:
+[e :U 346 ]
+"278
+[; ;MCAL/CCP/CCP.c: 278:                 break;
+[e $U 344  ]
+"280
+[; ;MCAL/CCP/CCP.c: 280:             case 1:
+[e :U 347 ]
+"299
+[; ;MCAL/CCP/CCP.c: 299:                 break;
+[e $U 344  ]
+"300
+[; ;MCAL/CCP/CCP.c: 300:         }
+}
+[e $U 344  ]
+[e :U 345 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 346
+ , $ -> 1 `i 347
+ 344 ]
+[e :U 344 ]
+"301
+[; ;MCAL/CCP/CCP.c: 301:     }
+}
+[e :U 343 ]
+"302
+[; ;MCAL/CCP/CCP.c: 302: }
+[e :UE 342 ]
+}
+"311
+[; ;MCAL/CCP/CCP.c: 311: static void CCP_CaptureModeConfig(CCP_t *Copy_stCCP) {
+[v _CCP_CaptureModeConfig `(v ~T0 @X0 1 sf1`*S276 ]
+{
+[e :U _CCP_CaptureModeConfig ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"312
+[; ;MCAL/CCP/CCP.c: 312:     switch (Copy_stCCP->ccp_select) {
+[e $U 350  ]
+{
+"314
+[; ;MCAL/CCP/CCP.c: 314:         case 0:
+[e :U 351 ]
+"351
+[; ;MCAL/CCP/CCP.c: 351:             break;
+[e $U 349  ]
+"353
+[; ;MCAL/CCP/CCP.c: 353:         case 1:
+[e :U 352 ]
+"390
+[; ;MCAL/CCP/CCP.c: 390:             break;
+[e $U 349  ]
+"391
+[; ;MCAL/CCP/CCP.c: 391:     }
+}
+[e $U 349  ]
+[e :U 350 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 351
+ , $ -> 1 `i 352
+ 349 ]
+[e :U 349 ]
+"392
+[; ;MCAL/CCP/CCP.c: 392: }
+[e :UE 348 ]
+}
+"475
+[; ;MCAL/CCP/CCP.c: 475: static void CCP_PWM_ModeConfig(CCP_t *Copy_stCCP) {
+[v _CCP_PWM_ModeConfig `(v ~T0 @X0 1 sf1`*S276 ]
+{
+[e :U _CCP_PWM_ModeConfig ]
+[v _Copy_stCCP `*S276 ~T0 @X0 1 r1 ]
+[f ]
+"476
+[; ;MCAL/CCP/CCP.c: 476:     PR2 = (u8) ((8000000 / (Copy_stCCP->PWM_FREQ * 4.0 * Copy_stCCP->Postscaler * Copy_stCCP->Prescaler)) - 1.0);
+[e = _PR2 -> - / -> -> 8000000 `l `d * * * -> . *U _Copy_stCCP 4 `d .4.0 -> -> . *U _Copy_stCCP 5 `i `d -> -> . *U _Copy_stCCP 6 `i `d .1.0 `uc ]
+"478
+[; ;MCAL/CCP/CCP.c: 478:     switch (Copy_stCCP->ccp_select) {
+[e $U 355  ]
+{
+"480
+[; ;MCAL/CCP/CCP.c: 480:         case 0:
+[e :U 356 ]
+"482
+[; ;MCAL/CCP/CCP.c: 482:             GPIO_VoidSetPinDirection(PORTC, 2, 0);
+[e ( _GPIO_VoidSetPinDirection (3 , , _PORTC -> -> 2 `i `uc -> -> 0 `i `uc ]
+"483
+[; ;MCAL/CCP/CCP.c: 483:             (CCP1CONbits.CCP1M = 12);
+[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
+"486
+[; ;MCAL/CCP/CCP.c: 486:             break;
+[e $U 354  ]
+"488
+[; ;MCAL/CCP/CCP.c: 488:         case 1:
+[e :U 357 ]
+"490
+[; ;MCAL/CCP/CCP.c: 490:             GPIO_VoidSetPinDirection(PORTC, 1, 0);
+[e ( _GPIO_VoidSetPinDirection (3 , , _PORTC -> -> 1 `i `uc -> -> 0 `i `uc ]
+"491
+[; ;MCAL/CCP/CCP.c: 491:             (CCP2CONbits.CCP2M = 12);
+[e = . . _CCP2CONbits 0 0 -> -> 12 `i `uc ]
+"494
+[; ;MCAL/CCP/CCP.c: 494:             break;
+[e $U 354  ]
+"495
+[; ;MCAL/CCP/CCP.c: 495:     }
+}
+[e $U 354  ]
+[e :U 355 ]
+[e [\ -> . *U _Copy_stCCP 2 `i , $ -> 0 `i 356
+ , $ -> 1 `i 357
+ 354 ]
+[e :U 354 ]
+"496
+[; ;MCAL/CCP/CCP.c: 496: }
+[e :UE 353 ]
+}
+"498
+[; ;MCAL/CCP/CCP.c: 498: void CCP1_ISR(void) {
+[v _CCP1_ISR `(v ~T0 @X0 1 ef ]
+{
+[e :U _CCP1_ISR ]
+[f ]
+"499
+[; ;MCAL/CCP/CCP.c: 499:     (PIR1bits.CCP1IF = 0);
+[e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
+"500
+[; ;MCAL/CCP/CCP.c: 500:     if (CCP1_InterruptHandeler) {
+[e $ ! != _CCP1_InterruptHandeler -> -> 0 `i `*F2654 359  ]
+{
+"501
+[; ;MCAL/CCP/CCP.c: 501:         CCP1_InterruptHandeler();
+[e ( *U _CCP1_InterruptHandeler ..  ]
+"502
+[; ;MCAL/CCP/CCP.c: 502:     }
+}
+[e :U 359 ]
+"503
+[; ;MCAL/CCP/CCP.c: 503: }
+[e :UE 358 ]
+}
+"505
+[; ;MCAL/CCP/CCP.c: 505: void CCP2_ISR(void) {
+[v _CCP2_ISR `(v ~T0 @X0 1 ef ]
+{
+[e :U _CCP2_ISR ]
+[f ]
+"506
+[; ;MCAL/CCP/CCP.c: 506:     (PIR2bits.CCP2IF = 0);
+[e = . . _PIR2bits 0 0 -> -> 0 `i `uc ]
+"507
+[; ;MCAL/CCP/CCP.c: 507:     if (CCP2_InterruptHandeler) {
+[e $ ! != _CCP2_InterruptHandeler -> -> 0 `i `*F2656 361  ]
+{
+"508
+[; ;MCAL/CCP/CCP.c: 508:         CCP2_InterruptHandeler();
+[e ( *U _CCP2_InterruptHandeler ..  ]
+"509
+[; ;MCAL/CCP/CCP.c: 509:     }
+}
+[e :U 361 ]
+"510
+[; ;MCAL/CCP/CCP.c: 510: }
+[e :UE 360 ]
+}

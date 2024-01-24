@@ -1,0 +1,529 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"6 HAL/SERVO_MOTOR/SERVO.c
+[; ;HAL/SERVO_MOTOR/SERVO.c: 6: CCP_t ccp1 = {
+[c E2579 0 1 2 .. ]
+[n E2579 . Capture_Mode Compare_Mode PWM_Mode  ]
+[v F2590 `(v ~T0 @X0 0 tf ]
+"102 HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h
+[; ;HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h: 102: {
+[s S276 `E2579 1 `uc 1 :1 `uc 1 :2 `uc 1 `*F2590 1 ]
+[n S276 . mode CPP_Variant ccp_select timer3_timer1_ccp CCP1_InterruptHandeler ]
+"19 HAL/SERVO_MOTOR/SERVO.h
+[; ;HAL/SERVO_MOTOR/SERVO.h: 19: void Servo_ISR(void);
+[v _Servo_ISR `(v ~T0 @X0 0 ef ]
+"58 HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h
+[; ;HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h: 58: {
+[s S277 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 `us 1 ]
+[n S277 . prescaler RW_Mode ext_clk_synch mode reserved preload ]
+"130 HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h
+[; ;HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h: 130: void CCP_voidInit(CCP_t *Copy_stCCP);
+[v _CCP_voidInit `(v ~T0 @X0 0 ef1`*S276 ]
+"74 HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h
+[; ;HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h: 74: void TIMER3_voidInit(TIMER3_t *Copy_stTimer);
+[v _TIMER3_voidInit `(v ~T0 @X0 0 ef1`*S277 ]
+"18 HAL/SERVO_MOTOR/SERVO.h
+[; ;HAL/SERVO_MOTOR/SERVO.h: 18: f32 map(f32 number, f32 start_1, f32 finish_1, f32 start_2, f32 finish_2);
+[v _map `(f ~T0 @X0 0 ef5`f`f`f`f`f ]
+"76 HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h
+[; ;HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h: 76: void TIMER3_voidWriteReg(TIMER3_t *Copy_stTimer, u16 Copy_u16Value);
+[v _TIMER3_voidWriteReg `(v ~T0 @X0 0 ef2`*S277`us ]
+"140 HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h
+[; ;HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h: 140: void CCP_voidCompareSetValue(CCP_t *Copy_stCCP, u16 Copy_u16Value);
+[v _CCP_voidCompareSetValue `(v ~T0 @X0 0 ef2`*S276`us ]
+"4261 HAL/SERVO_MOTOR/../../MCAL/TIMER3/../../LIB/pic18f4620.h
+[s S163 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S163 . CCP1M DC1B P1M ]
+"4266
+[s S164 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S164 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 CCP1Y CCP1X P1M0 P1M1 ]
+"4276
+[s S165 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S165 . . DC1B0 DC1B1 ]
+"4260
+[u S162 `S163 1 `S164 1 `S165 1 ]
+[n S162 . . . . ]
+"4282
+[v _CCP1CONbits `VS162 ~T0 @X0 0 e@4029 ]
+"54 HAL/SERVO_MOTOR/../../MCAL/TIMER3/../../LIB/pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; <" LATA equ 0F89h ;# ">
+"994
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; <" TOSU equ 0FFFh ;# ">
+"17 HAL/SERVO_MOTOR/../../MCAL/TIMER3/../../LIB/device_config.h
+[p x OSC  =  HS          ]
+"18
+[p x FCMEN  =  OFF       ]
+"19
+[p x IESO  =  OFF        ]
+"22
+[p x PWRT  =  OFF        ]
+"23
+[p x BOREN  =  OFF       ]
+"24
+[p x BORV  =  3          ]
+"27
+[p x WDT  =  OFF         ]
+"28
+[p x WDTPS  =  32768     ]
+"31
+[p x CCP2MX  =  PORTC    ]
+"32
+[p x PBADEN  =  OFF      ]
+"33
+[p x LPT1OSC  =  OFF     ]
+"34
+[p x MCLRE  =  OFF       ]
+"37
+[p x STVREN  =  OFF      ]
+"38
+[p x LVP  =  OFF         ]
+"39
+[p x XINST  =  OFF       ]
+"42
+[p x CP0  =  OFF         ]
+"43
+[p x CP1  =  OFF         ]
+"44
+[p x CP2  =  OFF         ]
+"45
+[p x CP3  =  OFF         ]
+"48
+[p x CPB  =  OFF         ]
+"49
+[p x CPD  =  OFF         ]
+"52
+[p x WRT0  =  OFF        ]
+"53
+[p x WRT1  =  OFF        ]
+"54
+[p x WRT2  =  OFF        ]
+"55
+[p x WRT3  =  OFF        ]
+"58
+[p x WRTC  =  OFF        ]
+"59
+[p x WRTB  =  OFF        ]
+"60
+[p x WRTD  =  OFF        ]
+"63
+[p x EBTR0  =  OFF       ]
+"64
+[p x EBTR1  =  OFF       ]
+"65
+[p x EBTR2  =  OFF       ]
+"66
+[p x EBTR3  =  OFF       ]
+"69
+[p x EBTRB  =  OFF       ]
+"2 HAL/SERVO_MOTOR/SERVO.c
+[; ;HAL/SERVO_MOTOR/SERVO.c: 2: volatile u8 ccp_flag = 0;
+[v _ccp_flag `Vuc ~T0 @X0 1 e ]
+[i _ccp_flag
+-> -> 0 `i `uc
+]
+"3
+[; ;HAL/SERVO_MOTOR/SERVO.c: 3: volatile u16 Compare_Duty = 1800;
+[v _Compare_Duty `Vus ~T0 @X0 1 e ]
+[i _Compare_Duty
+-> -> 1800 `i `us
+]
+"6
+[; ;HAL/SERVO_MOTOR/SERVO.c: 6: CCP_t ccp1 = {
+[v _ccp1 `S276 ~T0 @X0 1 e ]
+[i _ccp1
+:U ..
+:U ..
+. `E2579 1
+-> -> 8 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+&U _Servo_ISR
+..
+..
+]
+"15
+[; ;HAL/SERVO_MOTOR/SERVO.c: 15: TIMER3_t T3 = {
+[v _T3 `S277 ~T0 @X0 1 e ]
+[i _T3
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `us
+..
+..
+]
+"24
+[; ;HAL/SERVO_MOTOR/SERVO.c: 24: void SERVO_voidServoInit(void) {
+[v _SERVO_voidServoInit `(v ~T0 @X0 1 ef ]
+{
+[e :U _SERVO_voidServoInit ]
+[f ]
+"25
+[; ;HAL/SERVO_MOTOR/SERVO.c: 25:     CCP_voidInit(&ccp1);
+[e ( _CCP_voidInit (1 &U _ccp1 ]
+"26
+[; ;HAL/SERVO_MOTOR/SERVO.c: 26:     TIMER3_voidInit(&T3);
+[e ( _TIMER3_voidInit (1 &U _T3 ]
+"27
+[; ;HAL/SERVO_MOTOR/SERVO.c: 27: }
+[e :UE 278 ]
+}
+"29
+[; ;HAL/SERVO_MOTOR/SERVO.c: 29: void SERVO_voidSetAngle(u8 Copy_u8Angle) {
+[v _SERVO_voidSetAngle `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _SERVO_voidSetAngle ]
+[v _Copy_u8Angle `uc ~T0 @X0 1 r1 ]
+[f ]
+"32
+[; ;HAL/SERVO_MOTOR/SERVO.c: 32:     Compare_Duty = map(Copy_u8Angle, 0.0, 180.0, 1850.0, 4000.0);
+[e = _Compare_Duty -> ( _map (4 , , , , -> _Copy_u8Angle `f -> .0.0 `f -> .180.0 `f -> .1850.0 `f -> .4000.0 `f `us ]
+"35
+[; ;HAL/SERVO_MOTOR/SERVO.c: 35: }
+[e :UE 279 ]
+}
+"37
+[; ;HAL/SERVO_MOTOR/SERVO.c: 37: void Servo_ISR(void) {
+[v _Servo_ISR `(v ~T0 @X0 1 ef ]
+{
+[e :U _Servo_ISR ]
+[f ]
+"39
+[; ;HAL/SERVO_MOTOR/SERVO.c: 39:     ccp_flag++;
+[e ++ _ccp_flag -> -> 1 `i `Vuc ]
+"40
+[; ;HAL/SERVO_MOTOR/SERVO.c: 40:     TIMER3_voidWriteReg(&T3, 0);
+[e ( _TIMER3_voidWriteReg (2 , &U _T3 -> -> 0 `i `us ]
+"41
+[; ;HAL/SERVO_MOTOR/SERVO.c: 41:     if (1 == ccp_flag) {
+[e $ ! == -> 1 `i -> _ccp_flag `i 281  ]
+{
+"42
+[; ;HAL/SERVO_MOTOR/SERVO.c: 42:         CCP_voidCompareSetValue(&ccp1, Compare_Duty);
+[e ( _CCP_voidCompareSetValue (2 , &U _ccp1 _Compare_Duty ]
+"43
+[; ;HAL/SERVO_MOTOR/SERVO.c: 43:         (CCP1CONbits.CCP1M = 9);
+[e = . . _CCP1CONbits 0 0 -> -> 9 `i `uc ]
+"44
+[; ;HAL/SERVO_MOTOR/SERVO.c: 44:     } else if (2 == ccp_flag) {
+}
+[e $U 282  ]
+[e :U 281 ]
+[e $ ! == -> 2 `i -> _ccp_flag `i 283  ]
+{
+"45
+[; ;HAL/SERVO_MOTOR/SERVO.c: 45:         CCP_voidCompareSetValue(&ccp1, 40000.0 - Compare_Duty);
+[e ( _CCP_voidCompareSetValue (2 , &U _ccp1 -> - .40000.0 -> -> _Compare_Duty `ui `d `us ]
+"46
+[; ;HAL/SERVO_MOTOR/SERVO.c: 46:         (CCP1CONbits.CCP1M = 8);
+[e = . . _CCP1CONbits 0 0 -> -> 8 `i `uc ]
+"47
+[; ;HAL/SERVO_MOTOR/SERVO.c: 47:         ccp_flag = 0;
+[e = _ccp_flag -> -> 0 `i `uc ]
+"49
+[; ;HAL/SERVO_MOTOR/SERVO.c: 49:     }
+}
+[e :U 283 ]
+[e :U 282 ]
+"51
+[; ;HAL/SERVO_MOTOR/SERVO.c: 51: }
+[e :UE 280 ]
+}
+"53
+[; ;HAL/SERVO_MOTOR/SERVO.c: 53: f32 map(f32 number, f32 start_1, f32 finish_1, f32 start_2, f32 finish_2) {
+[v _map `(f ~T0 @X0 1 ef5`f`f`f`f`f ]
+{
+[e :U _map ]
+[v _number `f ~T0 @X0 1 r1 ]
+[v _start_1 `f ~T0 @X0 1 r2 ]
+[v _finish_1 `f ~T0 @X0 1 r3 ]
+[v _start_2 `f ~T0 @X0 1 r4 ]
+[v _finish_2 `f ~T0 @X0 1 r5 ]
+[f ]
+"54
+[; ;HAL/SERVO_MOTOR/SERVO.c: 54:     f32 result;
+[v _result `f ~T0 @X0 1 a ]
+"55
+[; ;HAL/SERVO_MOTOR/SERVO.c: 55:     result = -((((finish_1 - number) * (finish_2 - start_2)) / (finish_1 - start_1)) - finish_2);
+[e = _result -U - / * - _finish_1 _number - _finish_2 _start_2 - _finish_1 _start_1 _finish_2 ]
+"56
+[; ;HAL/SERVO_MOTOR/SERVO.c: 56:     return result;
+[e ) _result ]
+[e $UE 284  ]
+"57
+[; ;HAL/SERVO_MOTOR/SERVO.c: 57: }
+[e :UE 284 ]
+}

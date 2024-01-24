@@ -1,0 +1,1247 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"78 MCAL/I2C/I2C.h
+[; ;MCAL/I2C/I2C.h: 78: {
+[s S273 `uc 1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . i2c_mode_cfg i2c_slave_add i2c_mode i2c_slew_rate i2c_smBUS i2c_general_call ]
+"89
+[; ;MCAL/I2C/I2C.h: 89: {
+[s S274 `ui 1 `S273 1 ]
+[n S274 . master_clk i2c_cfg ]
+"4922 MCAL/I2C/../../LIB/pic18f4620.h
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4922:     struct {
+[s S185 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S185 . SSPM CKP SSPEN SSPOV WCOL ]
+"4930
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4930:     struct {
+[s S186 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"4920
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4920: typedef union {
+[u S184 `S185 1 `S186 1 ]
+[n S184 . . . ]
+"4937
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4937: extern volatile SSPCON1bits_t SSPCON1bits __attribute__((address(0xFC6)));
+[v _SSPCON1bits `VS184 ~T0 @X0 0 e@4038 ]
+"4 MCAL/I2C/I2C.c
+[; ;MCAL/I2C/I2C.c: 4: static void I2C_MasterMode_CFG(const I2C_t *Copy_stI2C);
+[v _I2C_MasterMode_CFG `(v ~T0 @X0 0 sf1`*CS274 ]
+"5
+[; ;MCAL/I2C/I2C.c: 5: static void I2C_SlaveMode_CFG(const I2C_t *Copy_stI2C);
+[v _I2C_SlaveMode_CFG `(v ~T0 @X0 0 sf1`*CS274 ]
+"4858 MCAL/I2C/../../LIB/pic18f4620.h
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4858:     struct {
+[s S183 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S183 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"4856
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4856: typedef union {
+[u S182 `S183 1 ]
+[n S182 . . ]
+"4869
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4869: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0xFC5)));
+[v _SSPCON2bits `VS182 ~T0 @X0 0 e@4037 ]
+"5221
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5221: extern volatile unsigned char SSPADD __attribute__((address(0xFC8)));
+[v _SSPADD `Vuc ~T0 @X0 0 e@4040 ]
+"1900
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1900:     struct {
+[s S65 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S65 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1911
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1911:     struct {
+[s S66 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S66 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"1898
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1898: typedef union {
+[u S64 `S65 1 `S66 1 ]
+[n S64 . . . ]
+"1922
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1922: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS64 ~T0 @X0 0 e@3988 ]
+"4995
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4995:     struct {
+[s S188 :2 `uc 1 :1 `uc 1 ]
+[n S188 . . R_NOT_W ]
+"5000
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5000:     struct {
+[s S189 :5 `uc 1 :1 `uc 1 ]
+[n S189 . . D_NOT_A ]
+"5005
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5005:     struct {
+[s S190 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S190 . BF UA R_nW S P D_nA CKE SMP ]
+"5016
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5016:     struct {
+[s S191 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . R . D ]
+"5023
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5023:     struct {
+[s S192 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S192 . . W . A ]
+"5030
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5030:     struct {
+[s S193 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S193 . . nW . nA ]
+"5037
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5037:     struct {
+[s S194 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . R_W . D_A ]
+"5044
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5044:     struct {
+[s S195 :2 `uc 1 :1 `uc 1 ]
+[n S195 . . NOT_WRITE ]
+"5049
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5049:     struct {
+[s S196 :5 `uc 1 :1 `uc 1 ]
+[n S196 . . NOT_ADDRESS ]
+"5054
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5054:     struct {
+[s S197 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S197 . . nWRITE . nADDRESS ]
+"5061
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5061:     struct {
+[s S198 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S198 . . RW START STOP DA ]
+"5069
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5069:     struct {
+[s S199 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S199 . . NOT_W . NOT_A ]
+"4993
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4993: typedef union {
+[u S187 `S188 1 `S189 1 `S190 1 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
+[n S187 . . . . . . . . . . . . . ]
+"5076
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5076: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0xFC7)));
+[v _SSPSTATbits `VS187 ~T0 @X0 0 e@4039 ]
+"2669
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2669:     struct {
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2680
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2680:     struct {
+[s S90 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . . TX1IF RC1IF ]
+"2667
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2667: typedef union {
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
+"2686
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2686: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS88 ~T0 @X0 0 e@3998 ]
+"5228
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5228: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"54 MCAL/I2C/../../LIB/pic18f4620.h
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 54: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"200
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 200: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"376
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 376: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"557
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 557: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"704
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 704: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"918
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 918: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"1033
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1033: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"1148
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1148: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"1263
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1263: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"1378
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1378: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"1433
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1433: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"1438
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1438: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"1661
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1661: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"1666
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1666: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"1889
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1889: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"1894
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 1894: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"2117
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2117: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"2122
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2122: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"2345
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2345: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"2350
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2350: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"2515
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2515: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2583
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2583: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"2663
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2663: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"2743
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2743: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"2823
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2823: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"2892
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2892: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"2961
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 2961: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"3030
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3030: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"3099
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3099: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"3106
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3106: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"3113
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3113: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"3120
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3120: __asm("EEADRH equ 0FAAh");
+[; <" EEADRH equ 0FAAh ;# ">
+"3127
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3127: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"3132
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3132: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"3351
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3351: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"3356
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3356: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"3617
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3617: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"3622
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3622: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"3629
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3629: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"3634
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3634: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"3641
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3641: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"3646
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3646: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3653
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3653: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"3660
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3660: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"3778
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3778: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"3785
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3785: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"3792
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3792: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"3799
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3799: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"3893
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3893: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"3976
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 3976: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4061
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4061: __asm("PWM1CON equ 0FB7h");
+[; <" PWM1CON equ 0FB7h ;# ">
+"4134
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4134: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"4139
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4139: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4314
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4314: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"4397
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4397: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"4404
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4404: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"4411
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4411: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"4418
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4418: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"4519
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4519: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"4526
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4526: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"4533
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4533: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"4540
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4540: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"4614
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4614: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"4703
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4703: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"4831
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4831: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"4838
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4838: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"4845
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4845: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"4852
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4852: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4916
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4916: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4989
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 4989: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5223
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5223: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"5230
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5230: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"5237
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5237: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"5311
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5311: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"5316
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5316: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"5433
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5433: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"5440
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5440: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"5548
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5548: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"5555
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5555: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"5562
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5562: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"5569
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5569: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"5710
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5710: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"5741
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5741: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"5746
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 5746: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"6021
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6021: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"6101
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6101: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"6181
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6181: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"6188
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6188: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"6195
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6195: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"6202
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6202: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"6276
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6276: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"6283
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6283: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"6290
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6290: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"6297
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6297: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6304
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6304: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"6311
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6311: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6318
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6318: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6325
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6325: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"6332
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6332: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"6339
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6339: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"6346
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6346: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"6353
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6353: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"6360
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6360: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6367
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6367: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"6374
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6374: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6381
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6381: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6388
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6388: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"6395
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6395: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"6407
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6407: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"6414
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6414: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"6421
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6421: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"6428
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6428: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6435
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6435: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"6442
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6442: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6449
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6449: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6456
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6456: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"6463
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6463: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"6558
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6558: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"6632
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6632: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"6753
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6753: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"6760
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6760: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"6767
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6767: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"6774
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6774: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"6783
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6783: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"6790
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6790: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6797
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6797: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6804
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6804: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6813
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6813: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"6820
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6820: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"6827
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6827: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"6834
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6834: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"6841
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6841: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"6848
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6848: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"6958
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6958: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"6965
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6965: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"6972
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6972: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"6979
+[; ;MCAL/I2C/../../LIB/pic18f4620.h: 6979: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"13 MCAL/I2C/I2C.c
+[; ;MCAL/I2C/I2C.c: 13: void I2C_voidI2CInit(const I2C_t *Copy_stI2C)
+[v _I2C_voidI2CInit `(v ~T0 @X0 1 ef1`*CS274 ]
+"14
+[; ;MCAL/I2C/I2C.c: 14: {
+{
+[e :U _I2C_voidI2CInit ]
+"13
+[; ;MCAL/I2C/I2C.c: 13: void I2C_voidI2CInit(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"14
+[; ;MCAL/I2C/I2C.c: 14: {
+[f ]
+"15
+[; ;MCAL/I2C/I2C.c: 15:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 276  ]
+"16
+[; ;MCAL/I2C/I2C.c: 16:     {
+{
+"18
+[; ;MCAL/I2C/I2C.c: 18:         (SSPCON1bits.SSPEN = 0);
+[e = . . _SSPCON1bits 0 2 -> -> 0 `i `uc ]
+"20
+[; ;MCAL/I2C/I2C.c: 20:         if (1 == Copy_stI2C->i2c_cfg.i2c_mode)
+[e $ ! == -> 1 `i -> . . *U _Copy_stI2C 1 2 `i 277  ]
+"21
+[; ;MCAL/I2C/I2C.c: 21:         {
+{
+"22
+[; ;MCAL/I2C/I2C.c: 22:             I2C_MasterMode_CFG(Copy_stI2C);
+[e ( _I2C_MasterMode_CFG (1 _Copy_stI2C ]
+"23
+[; ;MCAL/I2C/I2C.c: 23:         }
+}
+[e $U 278  ]
+"24
+[; ;MCAL/I2C/I2C.c: 24:         else if (0 == Copy_stI2C->i2c_cfg.i2c_mode)
+[e :U 277 ]
+[e $ ! == -> 0 `i -> . . *U _Copy_stI2C 1 2 `i 279  ]
+"25
+[; ;MCAL/I2C/I2C.c: 25:         {
+{
+"27
+[; ;MCAL/I2C/I2C.c: 27:             SSPCON1bits.CKP = 1;
+[e = . . _SSPCON1bits 0 1 -> -> 1 `i `uc ]
+"29
+[; ;MCAL/I2C/I2C.c: 29:             SSPCON1bits.SSPOV = 0;
+[e = . . _SSPCON1bits 0 3 -> -> 0 `i `uc ]
+"31
+[; ;MCAL/I2C/I2C.c: 31:             SSPCON1bits.WCOL = 0;
+[e = . . _SSPCON1bits 0 4 -> -> 0 `i `uc ]
+"32
+[; ;MCAL/I2C/I2C.c: 32:             I2C_SlaveMode_CFG(Copy_stI2C);
+[e ( _I2C_SlaveMode_CFG (1 _Copy_stI2C ]
+"34
+[; ;MCAL/I2C/I2C.c: 34:             switch (Copy_stI2C->i2c_cfg.i2c_general_call)
+[e $U 281  ]
+"35
+[; ;MCAL/I2C/I2C.c: 35:             {
+{
+"36
+[; ;MCAL/I2C/I2C.c: 36:             case 0:
+[e :U 282 ]
+"37
+[; ;MCAL/I2C/I2C.c: 37:                 (SSPCON2bits.GCEN = 0);
+[e = . . _SSPCON2bits 0 7 -> -> 0 `i `uc ]
+"38
+[; ;MCAL/I2C/I2C.c: 38:                 break;
+[e $U 280  ]
+"39
+[; ;MCAL/I2C/I2C.c: 39:             case 1:
+[e :U 283 ]
+"40
+[; ;MCAL/I2C/I2C.c: 40:                 (SSPCON2bits.GCEN = 1);
+[e = . . _SSPCON2bits 0 7 -> -> 1 `i `uc ]
+"41
+[; ;MCAL/I2C/I2C.c: 41:                 break;
+[e $U 280  ]
+"42
+[; ;MCAL/I2C/I2C.c: 42:             default:
+[e :U 284 ]
+"43
+[; ;MCAL/I2C/I2C.c: 43:                 break;
+[e $U 280  ]
+"44
+[; ;MCAL/I2C/I2C.c: 44:             }
+}
+[e $U 280  ]
+[e :U 281 ]
+[e [\ -> . . *U _Copy_stI2C 1 5 `i , $ -> 0 `i 282
+ , $ -> 1 `i 283
+ 284 ]
+[e :U 280 ]
+"45
+[; ;MCAL/I2C/I2C.c: 45:             SSPADD = Copy_stI2C->i2c_cfg.i2c_slave_add;
+[e = _SSPADD . . *U _Copy_stI2C 1 1 ]
+"46
+[; ;MCAL/I2C/I2C.c: 46:         }
+}
+[e :U 279 ]
+[e :U 278 ]
+"49
+[; ;MCAL/I2C/I2C.c: 49:         TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"50
+[; ;MCAL/I2C/I2C.c: 50:         TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"52
+[; ;MCAL/I2C/I2C.c: 52:         switch (Copy_stI2C->i2c_cfg.i2c_smBUS)
+[e $U 286  ]
+"53
+[; ;MCAL/I2C/I2C.c: 53:         {
+{
+"54
+[; ;MCAL/I2C/I2C.c: 54:         case 0:
+[e :U 287 ]
+"55
+[; ;MCAL/I2C/I2C.c: 55:             (SSPSTATbits.CKE = 0);
+[e = . . _SSPSTATbits 2 6 -> -> 0 `i `uc ]
+"56
+[; ;MCAL/I2C/I2C.c: 56:             break;
+[e $U 285  ]
+"57
+[; ;MCAL/I2C/I2C.c: 57:         case 1:
+[e :U 288 ]
+"58
+[; ;MCAL/I2C/I2C.c: 58:             (SSPSTATbits.CKE = 1);
+[e = . . _SSPSTATbits 2 6 -> -> 1 `i `uc ]
+"59
+[; ;MCAL/I2C/I2C.c: 59:             break;
+[e $U 285  ]
+"60
+[; ;MCAL/I2C/I2C.c: 60:         default:
+[e :U 289 ]
+"61
+[; ;MCAL/I2C/I2C.c: 61:             break;
+[e $U 285  ]
+"62
+[; ;MCAL/I2C/I2C.c: 62:         }
+}
+[e $U 285  ]
+[e :U 286 ]
+[e [\ -> . . *U _Copy_stI2C 1 4 `i , $ -> 0 `i 287
+ , $ -> 1 `i 288
+ 289 ]
+[e :U 285 ]
+"64
+[; ;MCAL/I2C/I2C.c: 64:         switch (Copy_stI2C->i2c_cfg.i2c_slew_rate)
+[e $U 291  ]
+"65
+[; ;MCAL/I2C/I2C.c: 65:         {
+{
+"66
+[; ;MCAL/I2C/I2C.c: 66:         case 1:
+[e :U 292 ]
+"67
+[; ;MCAL/I2C/I2C.c: 67:             (SSPSTATbits.SMP = 1);
+[e = . . _SSPSTATbits 2 7 -> -> 1 `i `uc ]
+"68
+[; ;MCAL/I2C/I2C.c: 68:             break;
+[e $U 290  ]
+"69
+[; ;MCAL/I2C/I2C.c: 69:         case 0:
+[e :U 293 ]
+"70
+[; ;MCAL/I2C/I2C.c: 70:             (SSPSTATbits.SMP = 0);
+[e = . . _SSPSTATbits 2 7 -> -> 0 `i `uc ]
+"71
+[; ;MCAL/I2C/I2C.c: 71:             break;
+[e $U 290  ]
+"72
+[; ;MCAL/I2C/I2C.c: 72:         default:
+[e :U 294 ]
+"73
+[; ;MCAL/I2C/I2C.c: 73:             break;
+[e $U 290  ]
+"74
+[; ;MCAL/I2C/I2C.c: 74:         }
+}
+[e $U 290  ]
+[e :U 291 ]
+[e [\ -> . . *U _Copy_stI2C 1 3 `i , $ -> 1 `i 292
+ , $ -> 0 `i 293
+ 294 ]
+[e :U 290 ]
+"79
+[; ;MCAL/I2C/I2C.c: 79:         (SSPCON1bits.SSPEN = 1);
+[e = . . _SSPCON1bits 0 2 -> -> 1 `i `uc ]
+"80
+[; ;MCAL/I2C/I2C.c: 80:     }
+}
+[e :U 276 ]
+"81
+[; ;MCAL/I2C/I2C.c: 81: }
+[e :UE 275 ]
+}
+"83
+[; ;MCAL/I2C/I2C.c: 83: void I2C_voidI2CDeinit(const I2C_t *Copy_stI2C)
+[v _I2C_voidI2CDeinit `(v ~T0 @X0 1 ef1`*CS274 ]
+"84
+[; ;MCAL/I2C/I2C.c: 84: {
+{
+[e :U _I2C_voidI2CDeinit ]
+"83
+[; ;MCAL/I2C/I2C.c: 83: void I2C_voidI2CDeinit(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"84
+[; ;MCAL/I2C/I2C.c: 84: {
+[f ]
+"85
+[; ;MCAL/I2C/I2C.c: 85:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 296  ]
+"86
+[; ;MCAL/I2C/I2C.c: 86:     {
+{
+"87
+[; ;MCAL/I2C/I2C.c: 87:     }
+}
+[e :U 296 ]
+"88
+[; ;MCAL/I2C/I2C.c: 88: }
+[e :UE 295 ]
+}
+"90
+[; ;MCAL/I2C/I2C.c: 90: void I2C_voidSendStartCond(const I2C_t *Copy_stI2C)
+[v _I2C_voidSendStartCond `(v ~T0 @X0 1 ef1`*CS274 ]
+"91
+[; ;MCAL/I2C/I2C.c: 91: {
+{
+[e :U _I2C_voidSendStartCond ]
+"90
+[; ;MCAL/I2C/I2C.c: 90: void I2C_voidSendStartCond(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"91
+[; ;MCAL/I2C/I2C.c: 91: {
+[f ]
+"93
+[; ;MCAL/I2C/I2C.c: 93:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 298  ]
+"94
+[; ;MCAL/I2C/I2C.c: 94:     {
+{
+"95
+[; ;MCAL/I2C/I2C.c: 95:         SSPCON2bits.SEN = 1;
+[e = . . _SSPCON2bits 0 0 -> -> 1 `i `uc ]
+"96
+[; ;MCAL/I2C/I2C.c: 96:         while (SSPCON2bits.SEN)
+[e $U 299  ]
+[e :U 300 ]
+"97
+[; ;MCAL/I2C/I2C.c: 97:             ;
+[e :U 299 ]
+"96
+[; ;MCAL/I2C/I2C.c: 96:         while (SSPCON2bits.SEN)
+[e $ != -> . . _SSPCON2bits 0 0 `i -> 0 `i 300  ]
+[e :U 301 ]
+"98
+[; ;MCAL/I2C/I2C.c: 98:         (PIR1bits.SSPIF = 0);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"99
+[; ;MCAL/I2C/I2C.c: 99:     }
+}
+[e :U 298 ]
+"100
+[; ;MCAL/I2C/I2C.c: 100: }
+[e :UE 297 ]
+}
+"102
+[; ;MCAL/I2C/I2C.c: 102: void I2C_voidSendRebeatStartCond(const I2C_t *Copy_stI2C)
+[v _I2C_voidSendRebeatStartCond `(v ~T0 @X0 1 ef1`*CS274 ]
+"103
+[; ;MCAL/I2C/I2C.c: 103: {
+{
+[e :U _I2C_voidSendRebeatStartCond ]
+"102
+[; ;MCAL/I2C/I2C.c: 102: void I2C_voidSendRebeatStartCond(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"103
+[; ;MCAL/I2C/I2C.c: 103: {
+[f ]
+"104
+[; ;MCAL/I2C/I2C.c: 104:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 303  ]
+"105
+[; ;MCAL/I2C/I2C.c: 105:     {
+{
+"106
+[; ;MCAL/I2C/I2C.c: 106:         SSPCON2bits.RSEN = 1;
+[e = . . _SSPCON2bits 0 1 -> -> 1 `i `uc ]
+"107
+[; ;MCAL/I2C/I2C.c: 107:         while (SSPCON2bits.RSEN)
+[e $U 304  ]
+[e :U 305 ]
+"108
+[; ;MCAL/I2C/I2C.c: 108:             ;
+[e :U 304 ]
+"107
+[; ;MCAL/I2C/I2C.c: 107:         while (SSPCON2bits.RSEN)
+[e $ != -> . . _SSPCON2bits 0 1 `i -> 0 `i 305  ]
+[e :U 306 ]
+"109
+[; ;MCAL/I2C/I2C.c: 109:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"110
+[; ;MCAL/I2C/I2C.c: 110:     }
+}
+[e :U 303 ]
+"111
+[; ;MCAL/I2C/I2C.c: 111: }
+[e :UE 302 ]
+}
+"113
+[; ;MCAL/I2C/I2C.c: 113: void I2C_voidSendStopCond(const I2C_t *Copy_stI2C)
+[v _I2C_voidSendStopCond `(v ~T0 @X0 1 ef1`*CS274 ]
+"114
+[; ;MCAL/I2C/I2C.c: 114: {
+{
+[e :U _I2C_voidSendStopCond ]
+"113
+[; ;MCAL/I2C/I2C.c: 113: void I2C_voidSendStopCond(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"114
+[; ;MCAL/I2C/I2C.c: 114: {
+[f ]
+"116
+[; ;MCAL/I2C/I2C.c: 116:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 308  ]
+"117
+[; ;MCAL/I2C/I2C.c: 117:     {
+{
+"118
+[; ;MCAL/I2C/I2C.c: 118:         SSPCON2bits.PEN = 1;
+[e = . . _SSPCON2bits 0 2 -> -> 1 `i `uc ]
+"119
+[; ;MCAL/I2C/I2C.c: 119:         while (SSPCON2bits.PEN == 1)
+[e $U 309  ]
+[e :U 310 ]
+"120
+[; ;MCAL/I2C/I2C.c: 120:             ;
+[e :U 309 ]
+"119
+[; ;MCAL/I2C/I2C.c: 119:         while (SSPCON2bits.PEN == 1)
+[e $ == -> . . _SSPCON2bits 0 2 `i -> 1 `i 310  ]
+[e :U 311 ]
+"121
+[; ;MCAL/I2C/I2C.c: 121:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"122
+[; ;MCAL/I2C/I2C.c: 122:     }
+}
+[e :U 308 ]
+"123
+[; ;MCAL/I2C/I2C.c: 123: }
+[e :UE 307 ]
+}
+"125
+[; ;MCAL/I2C/I2C.c: 125: u8 I2C_u8WriteByteBlocking(const I2C_t *Copy_stI2C, u8 Copy_u8Data)
+[v _I2C_u8WriteByteBlocking `(uc ~T0 @X0 1 ef2`*CS274`uc ]
+"126
+[; ;MCAL/I2C/I2C.c: 126: {
+{
+[e :U _I2C_u8WriteByteBlocking ]
+"125
+[; ;MCAL/I2C/I2C.c: 125: u8 I2C_u8WriteByteBlocking(const I2C_t *Copy_stI2C, u8 Copy_u8Data)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+[v _Copy_u8Data `uc ~T0 @X0 1 r2 ]
+"126
+[; ;MCAL/I2C/I2C.c: 126: {
+[f ]
+"127
+[; ;MCAL/I2C/I2C.c: 127:     if (SSPCON1bits.WCOL == 1)
+[e $ ! == -> . . _SSPCON1bits 0 4 `i -> 1 `i 313  ]
+"128
+[; ;MCAL/I2C/I2C.c: 128:     {
+{
+"129
+[; ;MCAL/I2C/I2C.c: 129:         SSPCON1bits.WCOL = 0;
+[e = . . _SSPCON1bits 0 4 -> -> 0 `i `uc ]
+"130
+[; ;MCAL/I2C/I2C.c: 130:     }
+}
+[e :U 313 ]
+"131
+[; ;MCAL/I2C/I2C.c: 131:     u8 Local_u8Return = 0;
+[v _Local_u8Return `uc ~T0 @X0 1 a ]
+[e = _Local_u8Return -> -> 0 `i `uc ]
+"132
+[; ;MCAL/I2C/I2C.c: 132:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 314  ]
+"133
+[; ;MCAL/I2C/I2C.c: 133:     {
+{
+"134
+[; ;MCAL/I2C/I2C.c: 134:         SSPBUF = Copy_u8Data;
+[e = _SSPBUF _Copy_u8Data ]
+"135
+[; ;MCAL/I2C/I2C.c: 135:         while (!PIR1bits.SSPIF)
+[e $U 315  ]
+[e :U 316 ]
+"136
+[; ;MCAL/I2C/I2C.c: 136:             ;
+[e :U 315 ]
+"135
+[; ;MCAL/I2C/I2C.c: 135:         while (!PIR1bits.SSPIF)
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 316  ]
+[e :U 317 ]
+"137
+[; ;MCAL/I2C/I2C.c: 137:         (PIR1bits.SSPIF = 0);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"138
+[; ;MCAL/I2C/I2C.c: 138:         Local_u8Return = SSPCON2bits.ACKSTAT;
+[e = _Local_u8Return . . _SSPCON2bits 0 6 ]
+"139
+[; ;MCAL/I2C/I2C.c: 139:     }
+}
+[e :U 314 ]
+"140
+[; ;MCAL/I2C/I2C.c: 140:     if (SSPCON1bits.WCOL == 1)
+[e $ ! == -> . . _SSPCON1bits 0 4 `i -> 1 `i 318  ]
+"141
+[; ;MCAL/I2C/I2C.c: 141:     {
+{
+"142
+[; ;MCAL/I2C/I2C.c: 142:         SSPCON1bits.WCOL = 0;
+[e = . . _SSPCON1bits 0 4 -> -> 0 `i `uc ]
+"143
+[; ;MCAL/I2C/I2C.c: 143:     }
+}
+[e :U 318 ]
+"144
+[; ;MCAL/I2C/I2C.c: 144:     return Local_u8Return;
+[e ) _Local_u8Return ]
+[e $UE 312  ]
+"145
+[; ;MCAL/I2C/I2C.c: 145: }
+[e :UE 312 ]
+}
+"147
+[; ;MCAL/I2C/I2C.c: 147: u8 I2C_u8ReadByteBlocking(const I2C_t *Copy_stI2C, u8 Copy_u8Ack)
+[v _I2C_u8ReadByteBlocking `(uc ~T0 @X0 1 ef2`*CS274`uc ]
+"148
+[; ;MCAL/I2C/I2C.c: 148: {
+{
+[e :U _I2C_u8ReadByteBlocking ]
+"147
+[; ;MCAL/I2C/I2C.c: 147: u8 I2C_u8ReadByteBlocking(const I2C_t *Copy_stI2C, u8 Copy_u8Ack)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+[v _Copy_u8Ack `uc ~T0 @X0 1 r2 ]
+"148
+[; ;MCAL/I2C/I2C.c: 148: {
+[f ]
+"149
+[; ;MCAL/I2C/I2C.c: 149:     u8 Local_u8Return = 0;
+[v _Local_u8Return `uc ~T0 @X0 1 a ]
+[e = _Local_u8Return -> -> 0 `i `uc ]
+"151
+[; ;MCAL/I2C/I2C.c: 151:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 320  ]
+"152
+[; ;MCAL/I2C/I2C.c: 152:     {
+{
+"153
+[; ;MCAL/I2C/I2C.c: 153:         (SSPCON2bits.RCEN = 1);
+[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
+"154
+[; ;MCAL/I2C/I2C.c: 154:         while (!SSPSTATbits.BF)
+[e $U 321  ]
+[e :U 322 ]
+"155
+[; ;MCAL/I2C/I2C.c: 155:             ;
+[e :U 321 ]
+"154
+[; ;MCAL/I2C/I2C.c: 154:         while (!SSPSTATbits.BF)
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> 0 `i 322  ]
+[e :U 323 ]
+"156
+[; ;MCAL/I2C/I2C.c: 156:         Local_u8Return = SSPBUF;
+[e = _Local_u8Return _SSPBUF ]
+"157
+[; ;MCAL/I2C/I2C.c: 157:         if (Copy_u8Ack == 0)
+[e $ ! == -> _Copy_u8Ack `i -> 0 `i 324  ]
+"158
+[; ;MCAL/I2C/I2C.c: 158:         {
+{
+"159
+[; ;MCAL/I2C/I2C.c: 159:             SSPCON2bits.ACKDT = 0;
+[e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
+"162
+[; ;MCAL/I2C/I2C.c: 162:         }
+}
+[e $U 325  ]
+"163
+[; ;MCAL/I2C/I2C.c: 163:         else if (Copy_u8Ack == 1)
+[e :U 324 ]
+[e $ ! == -> _Copy_u8Ack `i -> 1 `i 326  ]
+"164
+[; ;MCAL/I2C/I2C.c: 164:         {
+{
+"165
+[; ;MCAL/I2C/I2C.c: 165:             SSPCON2bits.ACKDT = 1;
+[e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
+"167
+[; ;MCAL/I2C/I2C.c: 167:             SSPCON2bits.ACKEN = 1;
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+"169
+[; ;MCAL/I2C/I2C.c: 169:         }
+}
+[e :U 326 ]
+[e :U 325 ]
+"170
+[; ;MCAL/I2C/I2C.c: 170:         return Local_u8Return;
+[e ) _Local_u8Return ]
+[e $UE 319  ]
+"171
+[; ;MCAL/I2C/I2C.c: 171:     }
+}
+[e :U 320 ]
+"172
+[; ;MCAL/I2C/I2C.c: 172: }
+[e :UE 319 ]
+}
+"174
+[; ;MCAL/I2C/I2C.c: 174: static void I2C_MasterMode_CFG(const I2C_t *Copy_stI2C)
+[v _I2C_MasterMode_CFG `(v ~T0 @X0 1 sf1`*CS274 ]
+"175
+[; ;MCAL/I2C/I2C.c: 175: {
+{
+[e :U _I2C_MasterMode_CFG ]
+"174
+[; ;MCAL/I2C/I2C.c: 174: static void I2C_MasterMode_CFG(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"175
+[; ;MCAL/I2C/I2C.c: 175: {
+[f ]
+"176
+[; ;MCAL/I2C/I2C.c: 176:     (SSPCON1bits.SSPM = Copy_stI2C->i2c_cfg.i2c_mode_cfg);
+[e = . . _SSPCON1bits 0 0 . . *U _Copy_stI2C 1 0 ]
+"178
+[; ;MCAL/I2C/I2C.c: 178:     switch (Copy_stI2C->i2c_cfg.i2c_mode_cfg)
+[e $U 329  ]
+"179
+[; ;MCAL/I2C/I2C.c: 179:     {
+{
+"180
+[; ;MCAL/I2C/I2C.c: 180:     case 0x0BU:
+[e :U 330 ]
+"181
+[; ;MCAL/I2C/I2C.c: 181:         break;
+[e $U 328  ]
+"182
+[; ;MCAL/I2C/I2C.c: 182:     case 0x08U:
+[e :U 331 ]
+"183
+[; ;MCAL/I2C/I2C.c: 183:         SSPADD = (u8)(((8000000 / 4.0) / Copy_stI2C->master_clk) - 1);
+[e = _SSPADD -> - / / -> -> 8000000 `l `d .4.0 -> . *U _Copy_stI2C 0 `d -> -> 1 `i `d `uc ]
+"185
+[; ;MCAL/I2C/I2C.c: 185:         break;
+[e $U 328  ]
+"186
+[; ;MCAL/I2C/I2C.c: 186:     default:
+[e :U 332 ]
+"187
+[; ;MCAL/I2C/I2C.c: 187:         break;
+[e $U 328  ]
+"188
+[; ;MCAL/I2C/I2C.c: 188:     }
+}
+[e $U 328  ]
+[e :U 329 ]
+[e [\ -> . . *U _Copy_stI2C 1 0 `i , $ -> -> 11 `ui `i 330
+ , $ -> -> 8 `ui `i 331
+ 332 ]
+[e :U 328 ]
+"189
+[; ;MCAL/I2C/I2C.c: 189: }
+[e :UE 327 ]
+}
+"191
+[; ;MCAL/I2C/I2C.c: 191: static void I2C_SlaveMode_CFG(const I2C_t *Copy_stI2C)
+[v _I2C_SlaveMode_CFG `(v ~T0 @X0 1 sf1`*CS274 ]
+"192
+[; ;MCAL/I2C/I2C.c: 192: {
+{
+[e :U _I2C_SlaveMode_CFG ]
+"191
+[; ;MCAL/I2C/I2C.c: 191: static void I2C_SlaveMode_CFG(const I2C_t *Copy_stI2C)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+"192
+[; ;MCAL/I2C/I2C.c: 192: {
+[f ]
+"193
+[; ;MCAL/I2C/I2C.c: 193:     (SSPCON1bits.SSPM = Copy_stI2C->i2c_cfg.i2c_mode_cfg);
+[e = . . _SSPCON1bits 0 0 . . *U _Copy_stI2C 1 0 ]
+"194
+[; ;MCAL/I2C/I2C.c: 194: }
+[e :UE 333 ]
+}
+"252
+[; ;MCAL/I2C/I2C.c: 252: u8 I2C_u8WriteByteRegBlocking(const I2C_t *Copy_stI2C, u8 Copy_u8I2C_Address, u8 Copy_u8Byte_Address, u8 Copy_u8Data)
+[v _I2C_u8WriteByteRegBlocking `(uc ~T0 @X0 1 ef4`*CS274`uc`uc`uc ]
+"253
+[; ;MCAL/I2C/I2C.c: 253: {
+{
+[e :U _I2C_u8WriteByteRegBlocking ]
+"252
+[; ;MCAL/I2C/I2C.c: 252: u8 I2C_u8WriteByteRegBlocking(const I2C_t *Copy_stI2C, u8 Copy_u8I2C_Address, u8 Copy_u8Byte_Address, u8 Copy_u8Data)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+[v _Copy_u8I2C_Address `uc ~T0 @X0 1 r2 ]
+[v _Copy_u8Byte_Address `uc ~T0 @X0 1 r3 ]
+[v _Copy_u8Data `uc ~T0 @X0 1 r4 ]
+"253
+[; ;MCAL/I2C/I2C.c: 253: {
+[f ]
+"254
+[; ;MCAL/I2C/I2C.c: 254:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 335  ]
+"255
+[; ;MCAL/I2C/I2C.c: 255:     {
+{
+"256
+[; ;MCAL/I2C/I2C.c: 256:         I2C_voidSendStartCond(Copy_stI2C);
+[e ( _I2C_voidSendStartCond (1 _Copy_stI2C ]
+"257
+[; ;MCAL/I2C/I2C.c: 257:         I2C_u8WriteByteBlocking(Copy_stI2C, Copy_u8I2C_Address);
+[e ( _I2C_u8WriteByteBlocking (2 , _Copy_stI2C _Copy_u8I2C_Address ]
+"258
+[; ;MCAL/I2C/I2C.c: 258:         I2C_u8WriteByteBlocking(Copy_stI2C, Copy_u8Byte_Address);
+[e ( _I2C_u8WriteByteBlocking (2 , _Copy_stI2C _Copy_u8Byte_Address ]
+"259
+[; ;MCAL/I2C/I2C.c: 259:         I2C_u8WriteByteBlocking(Copy_stI2C, Copy_u8Data);
+[e ( _I2C_u8WriteByteBlocking (2 , _Copy_stI2C _Copy_u8Data ]
+"260
+[; ;MCAL/I2C/I2C.c: 260:         I2C_voidSendStopCond(Copy_stI2C);
+[e ( _I2C_voidSendStopCond (1 _Copy_stI2C ]
+"261
+[; ;MCAL/I2C/I2C.c: 261:     }
+}
+[e :U 335 ]
+"262
+[; ;MCAL/I2C/I2C.c: 262:     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 334  ]
+"263
+[; ;MCAL/I2C/I2C.c: 263: }
+[e :UE 334 ]
+}
+"265
+[; ;MCAL/I2C/I2C.c: 265: u8 I2C_u8ReadRegByte(const I2C_t *Copy_stI2C, u8 Copy_u8I2C_Address, u8 Copy_u8Byte_Address)
+[v _I2C_u8ReadRegByte `(uc ~T0 @X0 1 ef3`*CS274`uc`uc ]
+"266
+[; ;MCAL/I2C/I2C.c: 266: {
+{
+[e :U _I2C_u8ReadRegByte ]
+"265
+[; ;MCAL/I2C/I2C.c: 265: u8 I2C_u8ReadRegByte(const I2C_t *Copy_stI2C, u8 Copy_u8I2C_Address, u8 Copy_u8Byte_Address)
+[v _Copy_stI2C `*CS274 ~T0 @X0 1 r1 ]
+[v _Copy_u8I2C_Address `uc ~T0 @X0 1 r2 ]
+[v _Copy_u8Byte_Address `uc ~T0 @X0 1 r3 ]
+"266
+[; ;MCAL/I2C/I2C.c: 266: {
+[f ]
+"267
+[; ;MCAL/I2C/I2C.c: 267:     u8 returnedData = 0;
+[v _returnedData `uc ~T0 @X0 1 a ]
+[e = _returnedData -> -> 0 `i `uc ]
+"268
+[; ;MCAL/I2C/I2C.c: 268:     if (((void*)0) != Copy_stI2C)
+[e $ ! != -> -> -> 0 `i `*v `*CS274 _Copy_stI2C 337  ]
+"269
+[; ;MCAL/I2C/I2C.c: 269:     {
+{
+"270
+[; ;MCAL/I2C/I2C.c: 270:         I2C_voidSendStartCond(Copy_stI2C);
+[e ( _I2C_voidSendStartCond (1 _Copy_stI2C ]
+"271
+[; ;MCAL/I2C/I2C.c: 271:         I2C_u8WriteByteBlocking(Copy_stI2C, Copy_u8I2C_Address);
+[e ( _I2C_u8WriteByteBlocking (2 , _Copy_stI2C _Copy_u8I2C_Address ]
+"272
+[; ;MCAL/I2C/I2C.c: 272:         I2C_u8WriteByteBlocking(Copy_stI2C, Copy_u8Byte_Address);
+[e ( _I2C_u8WriteByteBlocking (2 , _Copy_stI2C _Copy_u8Byte_Address ]
+"273
+[; ;MCAL/I2C/I2C.c: 273:         I2C_voidSendRebeatStartCond(Copy_stI2C);
+[e ( _I2C_voidSendRebeatStartCond (1 _Copy_stI2C ]
+"274
+[; ;MCAL/I2C/I2C.c: 274:         I2C_u8WriteByteBlocking(Copy_stI2C, Copy_u8I2C_Address + 1);
+[e ( _I2C_u8WriteByteBlocking (2 , _Copy_stI2C -> + -> _Copy_u8I2C_Address `i -> 1 `i `uc ]
+"275
+[; ;MCAL/I2C/I2C.c: 275:         returnedData = I2C_u8ReadByteBlocking(Copy_stI2C, 0);
+[e = _returnedData ( _I2C_u8ReadByteBlocking (2 , _Copy_stI2C -> -> 0 `i `uc ]
+"276
+[; ;MCAL/I2C/I2C.c: 276:         I2C_voidSendStopCond(Copy_stI2C);
+[e ( _I2C_voidSendStopCond (1 _Copy_stI2C ]
+"277
+[; ;MCAL/I2C/I2C.c: 277:     }
+}
+[e :U 337 ]
+"278
+[; ;MCAL/I2C/I2C.c: 278:     return returnedData;
+[e ) _returnedData ]
+[e $UE 336  ]
+"279
+[; ;MCAL/I2C/I2C.c: 279: }
+[e :UE 336 ]
+}

@@ -1,0 +1,24 @@
+build/default/production/appliction.p1:  \
+appliction.c  \
+Application.h  \
+LIB/pic18f4620.h  \
+LIB/device_config.h  \
+LIB/STDTYPES.h  \
+LIB/BITMATH.h  \
+MCAL/GPIO/GPIO_Interface.h  \
+MCAL/GPIO/GPIO_REG.h  \
+HAL/KeyPad/KEYPAD_interface.h  \
+HAL/LCD/LCD_interface.h  \
+HAL/SERVO_MOTOR/SERVO.h  \
+HAL/SERVO_MOTOR/../../MCAL/CCP/CCP.h  \
+HAL/SERVO_MOTOR/../../MCAL/CCP/../Interrupt/Interrupt_interface.h  \
+HAL/SERVO_MOTOR/../../MCAL/CCP/../Interrupt/Interrupt_config.h  \
+HAL/SERVO_MOTOR/../../MCAL/CCP/../Interrupt/Interrupt_generation_config.h  \
+HAL/SERVO_MOTOR/../../MCAL/CCP/CCP_Config.h  \
+HAL/SERVO_MOTOR/../../MCAL/TIMER3/TIMER3.h  \
+MCAL/USART/USART.h  \
+MCAL/USART/USART_config.h  \
+MCAL/ADC/ADC.h  \
+MCAL/ADC/ADC_config.h  \
+HAL/LED/LED_interface.h  \
+MCAL/I2C/I2C.h 
